@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CULTURALGYM - Transforma Tu Cuerpo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body class="antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glassmorphism">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center max-w-7xl">
+            <a href="#hero" class="text-3xl font-bold tracking-tight flex items-center">
+                <img src="img/mejorar.png" alt="Icono del logo" class="h-16 w-16 mr-1">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+            <nav class="hidden md:flex space-x-4 items-center"> 
+                <a href="#plans" class="hover:accent-text transition-colors px-2 py-1">PLANES</a>
+                <a href="#trainers" class="hover:accent-text transition-colors px-2 py-1">ENTRENADORES</a>
+                <a href="#testimonials" class="hover:accent-text transition-colors px-2 py-1">TESTIMONIO</a>
+                <a href="#location" class="hover:accent-text transition-colors px-2 py-1">UBICACIÓN</a>
+                <a href="#contact" class="hover:accent-text transition-colors px-2 py-1">CONTACTO</a>
+                <a href="#contact" class="btn btn-primary ml-2">COMIENZA AHORA</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobileMenuButton" class="hamburger focus:outline-none">
+                    <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden glassmorphism border-t border-gray-700">
+            <nav class="flex flex-col items-center space-y-3 py-4">
+                <a href="#hero" class="hover:accent-text transition-colors block py-2 text-lg">INICIO</a>
+                <a href="#services" class="hover:accent-text transition-colors block py-2 text-lg">SERVICIO</a>
+                <a href="#plans" class="hover:accent-text transition-colors block py-2 text-lg">PLANES</a>
+                <a href="#trainers" class="hover:accent-text transition-colors block py-2 text-lg">ENTRENADORES</a>
+                <a href="#testimonials" class="hover:accent-text transition-colors block py-2 text-lg">TESTIMONIO</a>
+                <a href="#location" class="hover:accent-text transition-colors block py-2 text-lg">UBICACIÓN</a>
+                <a href="#contact" class="hover:accent-text transition-colors block py-2 text-lg">CONTACTO</a>
+                <a href="#contact" class="btn btn-primary mt-3">COMIENZA AHORA</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-bg-image min-h-screen flex items-center justify-center text-center relative pt-20 fade-in-section">
+        <div class="hero-overlay"></div>
+        <div class="level-up-text top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 select-none">LEVEL</div>
+        <div class="level-up-text top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[-10%] select-none">UP</div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase mb-6 leading-tight tracking-tighter">
+                LISTO PARA<br><span class="accent-text" style="text-shadow: 0 0 25px #00E5FF, 0 0 40px #00B8D4;">ENTRENAR</span><br>TU CUERPO
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+                Únete a la comunidad de CULTURALGYM y transforma tu vida con nuestros programas de entrenamiento de élite y planes personalizados.
+            </p>
+            <a href="#plans" class="btn btn-secondary text-lg px-10 py-4">VER PLANES</a>
+            <div class="mt-20 mb-5 md:mt-28 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+                <div class="text-center glassmorphism p-6 rounded-lg"><p class="text-4xl lg:text-5xl font-bold accent-text">20+</p><p class="text-gray-300 mt-1">Años de experiencia</p></div>
+                <div class="text-center glassmorphism p-6 rounded-lg"><p class="text-4xl lg:text-5xl font-bold accent-text">15K+</p><p class="text-gray-300 mt-1">Miembros actuales</p></div>
+                <div class="text-center glassmorphism p-6 rounded-lg"><p class="text-4xl lg:text-5xl font-bold accent-text">14K+</p><p class="text-gray-300 mt-1">Miembros Felices</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 md:py-28 fade-in-section">
+        <div class="container mx-auto px-6 text-center max-w-7xl">
+            <h2 class="section-title">PORQUE <span class="accent-text">ELEGIRNOS</span></h2>
+            <p class="section-subtitle">Más que un gimnasio, somos tu aliado estratégico para un acondicionamiento físico integral y adaptado a ti. Transforma Tu Cuerpo y Alcanza Tus Metas Con Nosotros.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glassmorphism p-8 rounded-xl text-left service-card"><span class="accent-text text-4xl font-bold block mb-3">01</span><h3 class="text-xl font-semibold mb-3 uppercase tracking-wide">Entrenamiento Personal</h3><p class="text-gray-300 text-sm leading-relaxed">Logra Tus Metas Más Rápido con Entrenamiento 100% Personalizado. Nuestros coaches certificados diseñan un plan exclusivo para ti.</p></div>
+                <div class="glassmorphism p-8 rounded-xl text-left service-card"><span class="accent-text text-4xl font-bold block mb-3">02</span><h3 class="text-xl font-semibold mb-3 uppercase tracking-wide">Equipamiento e Instalaciones</h3><p class="text-gray-300 text-sm leading-relaxed">Entrena Sin Límites con Equipamiento de Vanguardia e Instalaciones de Primer Nivel. Todo lo que necesitas para un entrenamiento profesional.</p></div>
+                <div class="glassmorphism p-8 rounded-xl text-left service-card"><span class="accent-text text-4xl font-bold block mb-3">03</span><h3 class="text-xl font-semibold mb-3 uppercase tracking-wide">Programas Especializados</h3><p class="text-gray-300 text-sm leading-relaxed">Descubre Tu Pasión y Varia Tu Rutina con Programas Especializados Impartidos por Expertos. Spinning, Afro, Aeróbicos, Box, y más.</p></div>
+                <div class="glassmorphism p-8 rounded-xl text-left service-card"><span class="accent-text text-4xl font-bold block mb-3">04</span><h3 class="text-xl font-semibold mb-3 uppercase tracking-wide">Comunidad y Eventos</h3><p class="text-gray-300 text-sm leading-relaxed">Únete a una comunidad vibrante. Ofrecemos eventos exclusivos, talleres y retos para mantenerte motivado y conectado.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans" class="py-20 md:py-28 bg-gray-950 fade-in-section">
+        <div class="container mx-auto px-6 text-center max-w-7xl">
+            <h2 class="section-title">ELIGE TU <span class="accent-text">MEMBRESÍA PERFECTA</span></h2>
+            <p class="section-subtitle">Tenemos planes flexibles diseñados para adaptarse a tus metas y estilo de vida. ¡Comienza tu transformación hoy!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                <div class="plan-card glassmorphism p-8 rounded-xl flex flex-col">
+                    <h3 class="text-2xl font-bold uppercase mb-2">PLAN MENSUAL</h3>
+                    <p class="accent-text text-4xl font-black mb-1">S/ 70<span class="text-lg font-normal text-gray-400">/mes</span></p>
+                    <p class="text-gray-400 text-sm mb-6">Ideal para empezar o si buscas flexibilidad.</p>
+                    <ul class="space-y-3 text-left text-gray-300 mb-8 flex-grow">
+                        <li class="plan-feature flex items-center"><i class="fas fa-check-circle"></i>Acceso completo a todas las áreas.</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-check-circle"></i>Clases grupales básicas.</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-dumbbell"></i>Uso ilimitado de máquinas.</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary w-full mt-auto">Seleccionar Plan</a>
+                </div>
+                <div class="plan-card glassmorphism p-8 rounded-xl flex flex-col popular relative">
+                    <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 accent-bg text-gray-900 px-4 py-1 text-sm font-semibold rounded-full uppercase">Más Popular</span>
+                    <h3 class="text-2xl font-bold uppercase mb-2 mt-4">PLAN TRIMESTRAL</h3>
+                    <p class="accent-text text-4xl font-black mb-1">S/ 150<span class="text-lg font-normal text-gray-400">/3 meses</span></p>
+                    <p class="text-sm text-gray-400 mb-1">(Equivalente a S/ 50 por mes)</p>
+                    <p class="text-gray-400 text-sm mb-6">Compromiso y ahorro para ver resultados.</p>
+                    <ul class="space-y-3 text-left text-gray-300 mb-8 flex-grow">
+                        <li class="plan-feature flex items-center"><i class="fas fa-check-circle"></i>Todo lo del Plan Mensual.</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-star"></i>Atención personalizada inicial (evaluación).</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-calendar-alt"></i>Acceso a talleres seleccionados.</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-users"></i>Comunidad activa y soporte.</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-full mt-auto">Seleccionar Plan</a>
+                </div>
+                <div class="plan-card glassmorphism p-8 rounded-xl flex flex-col">
+                    <h3 class="text-2xl font-bold uppercase mb-2">PLAN ANUAL</h3>
+                    <p class="accent-text text-4xl font-black mb-1">S/ 450<span class="text-lg font-normal text-gray-400">/año</span></p>
+                     <p class="text-sm text-gray-400 mb-1">(Equivalente a S/ 37.50 por mes)</p>
+                    <p class="text-gray-400 text-sm mb-6">Máximo ahorro y beneficios exclusivos.</p>
+                    <ul class="space-y-3 text-left text-gray-300 mb-8 flex-grow">
+                        <li class="plan-feature flex items-center"><i class="fas fa-check-circle"></i>Todo lo del Plan Trimestral.</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-crown"></i>Seguimiento personalizado continuo.</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-gift"></i>Eventos privados exclusivos.</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-tags"></i>Descuentos en tienda y partners.</li>
+                        <li class="plan-feature flex items-center"><i class="fas fa-user-plus"></i>1 Pase de invitado mensual.</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary w-full mt-auto">Seleccionar Plan</a>
+                </div>
+            </div>
+            <p class="mt-12 text-gray-400">También disponibles: Plan 2 Meses (S/ 130) y Plan 6 Meses (S/ 300). <a href="#contact" class="accent-text font-semibold hover:underline">Contáctanos</a> para más detalles.</p>
+        </div>
+    </section>
+
+    <section id="student-zone" class="student-zone fade-in-section">
+        <div class="container mx-auto px-6 text-center max-w-7xl py-16 md:py-5">
+            <h2 class="student-zone-title">STUDENT <span class="accent-text">POWER ZONE</span></h2>
+            <p class="student-zone-subtitle">¡Planes exclusivos para estudiantes! Entrena sin límites y mantén tu energía al máximo con acceso total a un precio increíble.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <div class="student-plan-card">
+                    <h3 class="text-2xl font-bold uppercase mb-2">PASE DIARIO ESTUDIANTE</h3>
+                    <p class="price"><span class="currency">S/</span> 5</p>
+                    <p class="duration">/ día</p>
+                    <span class="all-inclusive-badge">TODO INCLUIDO</span>
+                    <ul class="space-y-3 text-left text-gray-300 mb-8 flex-grow student-plan-feature">
+                        <li class="flex items-center"><i class="fas fa-bolt"></i>Acceso total por 24 horas.</li>
+                        <li class="flex items-center"><i class="fas fa-dumbbell"></i>Todas las máquinas y áreas.</li>
+                        <li class="flex items-center"><i class="fas fa-users"></i>Participación en clases grupales del día.</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-full mt-auto">Obtener Pase Diario</a>
+                </div>
+
+                <div class="student-plan-card">
+                     <h3 class="text-2xl font-bold uppercase mb-2">PLAN MENSUAL ESTUDIANTE</h3>
+                    <p class="price"><span class="currency">S/</span> 50</p>
+                    <p class="duration">/ mes</p>
+                    <span class="all-inclusive-badge">TODO INCLUIDO</span>
+                    <ul class="space-y-3 text-left text-gray-300 mb-8 flex-grow student-plan-feature">
+                        <li class="flex items-center"><i class="fas fa-check-double"></i>Acceso ilimitado por 30 días.</li>
+                        <li class="flex items-center"><i class="fas fa-calendar-check"></i>Todas las clases grupales.</li>
+                        <li class="flex items-center"><i class="fas fa-id-card"></i>Sin contratos, flexibilidad total.</li>
+                        <li class="flex items-center"><i class="fas fa-wifi"></i>Wi-Fi gratuito.</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-full mt-auto">Unirme Ahora</a>
+                </div>
+
+                <div class="student-plan-card">
+                    <h3 class="text-2xl font-bold uppercase mb-2">PLAN TRIMESTRAL ESTUDIANTE</h3>
+                    <p class="price"><span class="currency">S/</span> 130</p>
+                    <p class="duration">/ 3 meses</p>
+                    <span class="all-inclusive-badge">TODO INCLUIDO</span>
+                    <ul class="space-y-3 text-left text-gray-300 mb-8 flex-grow student-plan-feature">
+                        <li class="flex items-center"><i class="fas fa-medal"></i>Todos los beneficios del Plan Mensual Estudiante.</li>
+                        <li class="flex items-center"><i class="fas fa-graduation-cap"></i>Ideal para el ciclo académico.</li>
+                        <li class="flex items-center"><i class="fas fa-tags"></i>Pequeño descuento adicional.</li>
+                        <li class="flex items-center"><i class="fas fa-lock-open"></i>Acceso prioritario a eventos.</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-full mt-auto">Máximo Ahorro</a>
+                </div>
+            </div>
+        </div>
+        <div class="logo-scroller-container">
+            <div class="logo-scroller">
+                <img src="img/catolica.webp" alt="Logo 1">
+                <img src="img/britanico.png" alt="Logo 2">
+                <img src="img/institucion eductaivca.png" alt="Logo 3">
+                <img src="img/logo utp.png" alt="Logo 4">
+                <img src="img/isur logo.png" alt="Logo 5">
+                <img src="img/unsa logo.png" alt="Logo 1">
+                <img src="img/mendel logo.png" alt="Logo 2">
+                <img src="img/catolica.webp" alt="Logo 1">
+                <img src="img/britanico.png" alt="Logo 2">
+                <img src="img/institucion eductaivca.png" alt="Logo 3">
+                <img src="img/logo utp.png" alt="Logo 4">
+                <img src="img/isur logo.png" alt="Logo 5">
+                <img src="img/unsa logo.png" alt="Logo 1">
+                <img src="img/mendel logo.png" alt="Logo 2">
+            </div>
+        </div>
+    </section>
+
+    <section id="trainers" class="py-20 md:py-28 fade-in-section">
+        <div class="container mx-auto px-6 text-center max-w-7xl">
+            <h2 class="section-title">NUESTROS ENTRENADORES <span class="accent-text">PROFESIONALES</span></h2>
+            <p class="section-subtitle">Más que entrenadores, son tus aliados en el camino hacia una vida más saludable. Cada uno con una pasión por el fitness y un compromiso genuino con tu progreso individual.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gray-800 p-6 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-cyan-400/30"><img src="img/Claudia.png" alt="Entrenadora Claudia Leon" class="w-full h-96 object-cover rounded-lg mb-5"><h3 class="text-2xl font-semibold mb-1">CLAUDIA LEON</h3><p class="accent-text mb-2">Puntuación de entrenador</p><div class="flex justify-center text-yellow-400 space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+                <div class="bg-gray-800 p-6 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-cyan-400/30"><img src="img/Briceno.png" alt="Entrenador Jose Briceño" class="w-full h-96 object-cover rounded-lg mb-5"><h3 class="text-2xl font-semibold mb-1">JOSE BRICEÑO</h3><p class="accent-text mb-2">Puntuación de entrenador</p><div class="flex justify-center text-yellow-400 space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div>
+                <div class="bg-gray-800 p-6 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-cyan-400/30"><img src="img/Maria.png" alt="Entrenador Maria Peña" class="w-full h-96 object-cover rounded-lg mb-5"><h3 class="text-2xl font-semibold mb-1">MARIA PEÑA</h3><p class="accent-text mb-2">Puntuación de entrenador</p><div class="flex justify-center text-yellow-400 space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 md:py-28 bg-gray-950 overflow-hidden fade-in-section">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h2 class="section-title">QUÉ DICEN LOS <span class="accent-text">CLIENTES</span> DE NOSOTROS</h2>
+            <div class="testimonial-slider">
+                <div class="p-4"><div class="glassmorphism p-8 md:p-12 rounded-xl min-h-[380px] flex flex-col justify-center"><img src="img/LUISITO varela.png" alt="Cliente Luis Varela" class="w-28 h-28 rounded-full mx-auto mb-6 border-4 border-cyan-500 shadow-lg"><p class="text-gray-300 italic text-lg mb-6 leading-relaxed">"Estoy extremadamente agradecido por el impacto positivo que el entrenamiento en CULTURALGYM ha tenido en mi vida; he sido testigo de una notable transformación en fuerza, resistencia y niveles generales de condición física."</p><div class="flex justify-center text-yellow-400 mb-4 space-x-1"><i class="fas fa-star text-2xl"></i><i class="fas fa-star text-2xl"></i><i class="fas fa-star text-2xl"></i><i class="fas fa-star text-2xl"></i><i class="fas fa-star text-2xl"></i></div><h4 class="text-xl font-semibold uppercase tracking-wider">"LUIS VARELA"</h4></div></div>
+                <div class="p-4"><div class="glassmorphism p-8 md:p-12 rounded-xl min-h-[380px] flex flex-col justify-center"><img src="img/anasofia.png" alt="Cliente Ana Sofia" class="w-28 h-28 rounded-full mx-auto mb-6 border-4 border-cyan-500 shadow-lg"><p class="text-gray-300 italic text-lg mb-6 leading-relaxed">"El ambiente es increíble y los entrenadores son súper profesionales. He visto resultados asombrosos en poco tiempo. ¡Totalmente recomendado!"</p><div class="flex justify-center text-yellow-400 mb-4 space-x-1"><i class="fas fa-star text-2xl"></i><i class="fas fa-star text-2xl"></i><i class="fas fa-star text-2xl"></i><i class="fas fa-star text-2xl"></i><i class="far fa-star text-2xl"></i></div><h4 class="text-xl font-semibold uppercase tracking-wider">"ANA SOFÍA"</h4></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-28 fade-in-section">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-16 contact-form-container p-8 md:p-12 rounded-xl shadow-2xl overflow-hidden">
+                <div class="md:w-2/5">
+                    <img src="img/formulario.png" alt="Persona entrenando con determinación" class="rounded-lg shadow-lg w-full h-auto object-cover" style="max-height: 480px;">
+                </div>
+                <div class="md:w-3/5 text-center md:text-left">
+                    <h2 class="section-title leading-tight">COMENCEMOS TU<br><span class="accent-text">TRANSFORMACIÓN</span><br>AHORA MISMO</h2>
+                    <p class="text-gray-300 mb-8">Obtén un <span class="accent-text font-semibold">50% de descuento</span> en tu primera Plan al inscribirte este mes. ¡No esperes más! y registrate</p>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class=" form-input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" name="name" placeholder="Tu Nombre Completo" class="form-input w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                            </div>
+                            <div class="form-input-group">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" name="phone" placeholder="Tu Número de Teléfono" class="form-input w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                            </div>
+                        </div>
+                        <div class="form-input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Tu Correo Electrónico" class="form-input w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                        </div>
+                        <div class="form-input-group">
+                            <textarea name="message" placeholder="¿Tienes alguna pregunta o plan en mente?" rows="3" class="form-input w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all resize-none"></textarea>
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
+                        <button type="submit" class="btn btn-dark-outline w-full md:w-auto text-lg">ENVIAR Y UNIRME</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="py-20 md:py-28 bg-gray-950 fade-in-section">
+        <div class="container mx-auto px-6 text-center max-w-5xl"> <h2 class="section-title">ENCUÉNTRANOS <span class="accent-text">AQUÍ</span></h2>
+            <p class="section-subtitle">Visítanos en nuestra sede y comienza tu viaje hacia una vida más saludable. ¡Te esperamos!</p>
+            <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl">
+                 <iframe
+                    src="https://maps.google.com/maps?q=-16.40457983426042,-71.5462605431044&hl=es&z=17&amp;output=embed"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="mt-8 text-lg text-gray-300">
+                <i class="fas fa-map-marker-alt accent-text mr-2"></i>Av. San jeronimo, Arequipa, Perú - Al costado de Little Caesars Pizza :) 
+            </p>
+             <a href="https://www.google.com/maps/search/?api=1&query=-16.40457983426042,-71.5462605431044" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-6">
+                <i class="fas fa-directions mr-2"></i>CÓMO LLEGAR
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-16 pb-5 bg-black fade-in-section">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 items-start">
+                <div class="lg:col-span-1">
+                    <a href="#hero" class="text-3xl font-bold tracking-tight flex items-center"> 
+                        <img src="img/mejorar.png" alt="Icono del logo" class="h-12 w-12 mr-2">
+                        <span>CULTURAL<span class="accent-text">GYM</span></span>
+                    </a>
+                     <p class="text-gray-400 mt-4 text-sm leading-relaxed">Donde se entrena de verdad.</p>
+                     <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:accent-text transition-colors text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:accent-text transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:accent-text transition-colors text-xl"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-400 hover:accent-text transition-colors text-xl"><i class="fab fa-youtube"></i></a>
+                     </div>
+                </div>
+                <div class="md:col-span-1 lg:col-span-1">
+                    <h5 class="text-lg font-semibold text-white uppercase mb-4 tracking-wider">Enlaces Rápidos</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" class="text-gray-400 hover:accent-text transition-colors">Inicio</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:accent-text transition-colors">Servicios</a></li>
+                        <li><a href="#plans" class="text-gray-400 hover:accent-text transition-colors">Nuestros Planes</a></li>
+                        <li><a href="#student-zone" class="text-gray-400 hover:accent-text transition-colors">Plan Estudiante</a></li>
+                        <li><a href="#trainers" class="text-gray-400 hover:accent-text transition-colors">Entrenadores</a></li>
+                        <li><a href="#location" class="text-gray-400 hover:accent-text transition-colors">Ubicación</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:accent-text transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-1 lg:col-span-1">
+                    <h5 class="text-lg font-semibold text-white uppercase mb-4 tracking-wider">Legal</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:accent-text transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:accent-text transition-colors">Términos y Condiciones</a></li>
+                        <li><a href="#" class="text-gray-400 hover:accent-text transition-colors">Política de Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3 lg:col-span-1">
+                     <h5 class="text-lg font-semibold text-white uppercase mb-4 tracking-wider">Boletín Informativo</h5>
+                     <p class="text-gray-400 text-sm mb-3">Recibe ofertas exclusivas y noticias del gym.</p>
+                     <form action="#" class="flex">
+                        <input type="email" placeholder="Tu email" class="w-full p-3 rounded-l-md bg-gray-800 border border-gray-700 text-sm outline-none focus:border-cyan-500">
+                        <button type="submit" class="accent-bg text-gray-900 p-3 rounded-r-md font-semibold hover:bg-cyan-300 transition-colors"><i class="fas fa-paper-plane"></i></button>
+                     </form>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; <span id="currentYear"></span> CULTURALGYM. Todos los derechos reservados. Diseñado con <i class="fas fa-heart accent-text"></i> para la comunidad fitness.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chatbotIcon" title="Chatea con nosotros"><i class="fas fa-comment-dots"></i></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

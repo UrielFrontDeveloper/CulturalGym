@@ -1,0 +1,306 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    scroll-behavior: smooth;
+}
+.accent-text { color: #00E5FF; }
+.accent-bg { background-color: #00E5FF; }
+.accent-border { border-color: #00E5FF; }
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hero-bg-image {
+    background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(13, 13, 13, 0.5), rgba(13, 13, 13, 0.95));
+}
+.level-up-text {
+    font-size: clamp(3.5rem, 12vw, 9rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.07);
+    position: absolute;
+    z-index: 0;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+}
+.btn {
+    padding: 0.85rem 1.8rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
+}
+.btn-primary {
+    background: linear-gradient(45deg, #00E5FF, #00B8D4);
+    color: #0D0D0D;
+    border: none;
+}
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 229, 255, 0.35);
+}
+.btn-secondary {
+    border: 2px solid #00E5FF;
+    color: #00E5FF;
+    background-color: transparent;
+}
+.btn-secondary:hover {
+    background-color: #00E5FF;
+    color: #0D0D0D;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.2);
+}
+.btn-dark-outline {
+    border: 2px solid #00E5FF;
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.btn-dark-outline:hover {
+    background-color: #00E5FF;
+    color: #0D0D0D;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.25);
+}
+.section-title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #B0B0B0;
+    margin-bottom: 3.5rem;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+.hamburger div { width: 28px; height: 3px; background-color: white; margin: 6px 0; transition: 0.4s; }
+.hamburger.active .bar1 { transform: rotate(-45deg) translate(-7px, 7px); }
+.hamburger.active .bar2 { opacity: 0; }
+.hamburger.active .bar3 { transform: rotate(45deg) translate(-6px, -7px); }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: linear-gradient(45deg, #00E5FF, #00B8D4); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(45deg, #00c5dd, #00a0b8); }
+.service-card { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; }
+.service-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15); }
+#chatbotIcon {
+    position: fixed; bottom: 25px; left: 25px; background-color: #00E5FF; color: #0D0D0D;
+    width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; cursor: pointer; z-index: 1000; box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#chatbotIcon:hover { transform: scale(1.1); background-color: #00c5dd; }
+.fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+
+.plan-card {
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.plan-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
+    border-color: #00E5FF;
+}
+.plan-card.popular {
+    border-color: #00E5FF;
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.25);
+    transform: scale(1.05);
+}
+ .plan-card.popular:hover {
+    transform: translateY(-5px) scale(1.07);
+    box-shadow: 0 20px 45px rgba(0, 229, 255, 0.35);
+}
+.plan-feature i {
+    margin-right: 0.75rem;
+    color: #00E5FF;
+}
+.contact-form-container {
+    background: linear-gradient(145deg, rgba(0,0,0), rgba(0,0,0));
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.form-input-group {
+    position: relative;
+}
+.form-input-group i {
+    position: absolute;
+    left: 1.25rem; /* Aumentado para más espacio */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00E5FF;
+    opacity: 0.6;
+    pointer-events: none; /* Para que no interfiera con el click en el input */
+    
+}
+.form-input {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding-left: 3.5rem; /* Aumentado para más espacio con el icono */
+}
+.form-input-group textarea + i { /* Ajuste específico para el icono del textarea */
+    top: 1.45rem; /* Ajustar verticalmente para el textarea */
+    transform: translateY(0);
+}
+.form-input:focus {
+    background-color: rgba(255,255,255,0.08);
+    border-color: #00E5FF;
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
+}
+#location iframe {
+    filter: grayscale(0.3) contrast(1.1) brightness(0.9); /* Estilo sutil para el mapa */
+    border-radius: 0.75rem;
+}
+
+/* Student Zone Styles */
+.student-zone {
+    /* background: linear-gradient(135deg, #1a0529 0%, #2c0b42 50%, #1a0529 100%); Vibrant purple gradient */
+    background: linear-gradient(135deg, #000000 0%, #100f28 50%, #000000 100%); /* Darker, more subtle purple/blue */
+    padding-top: 4rem;
+    padding-bottom: 0; /* Logo scroller will be directly underneath */
+    position: relative;
+    overflow: hidden; /* For the logo scroller if it's part of this section */
+}
+.student-zone-title {
+    font-size: clamp(2.8rem, 7vw, 4.2rem); /* Even more impactful */
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem; /* More space */
+    letter-spacing: 2px; /* Wider spacing */
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 0 35px rgba(0, 229, 255, 0.3), 0 0 50px rgba(170, 0, 255, 0.3); /* Added purple glow */
+}
+ .student-zone-subtitle {
+    font-size: 1.25rem; /* Slightly larger */
+    color: #c0c0c0; /* Lighter gray */
+    margin-bottom: 4rem; /* More space */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+.student-plan-card {
+    background: rgba(0, 229, 255, 0.07); /* Slightly more visible accent */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to bottom right, #00E5FF, #e9bb03); /* Gradient border */
+    border-radius: 1.25rem; /* More rounded */
+    padding: 2.5rem; /* More padding */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1), 0 5px 15px rgba(170, 0, 255, 0.1); /* Dual color shadow */
+    display: flex;
+    flex-direction: column;
+}
+.student-plan-card:hover {
+    transform: translateY(-12px) scale(1.04); /* More pronounced hover */
+    box-shadow: 0 18px 45px rgba(0, 229, 255, 0.25), 0 10px 30px rgba(170, 0, 255, 0.2);
+}
+.student-plan-card .price {
+    font-size: clamp(2.8rem, 6vw, 3.5rem); /* Responsive price */
+    font-weight: 900;
+    color: #FFFFFF; /* White price for contrast on gradient border */
+    margin-bottom: 0.25rem;
+}
+.student-plan-card .price .currency {
+    color: #00E5FF;
+}
+.student-plan-card .duration {
+    font-size: 1rem;
+    color: #a0aec0;
+    margin-bottom: 1.5rem;
+}
+.student-plan-card .all-inclusive-badge {
+    background: linear-gradient(45deg, #00E5FF, #e9bb03); /* Gradient badge */
+    color: #FFFFFF;
+    padding: 0.35rem 1rem; /* Slightly larger badge */
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.student-plan-feature {
+    font-size: 1rem;
+}
+.student-plan-feature i {
+    margin-right: 0.75rem;
+    color: #00E5FF; /* Keep icon color consistent or use gradient */
+}
+
+/* Logo Scroller Styles */
+.logo-scroller-container {
+    background-color: white; /* Slightly darker for contrast */
+    padding: 2rem 0; /* More padding */
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5rem; /* More space above */
+    border-top: 1px solid rgba(0, 229, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+}
+.logo-scroller {
+    display: flex;
+    /* Calculate width: (logo_width + (margin_left + margin_right)) * num_logos * 2 (for duplication) */
+    /* Assuming each logo + margin is around 200px: 200px * 5 logos * 2 = 2000px */
+    width: calc((100px + 4rem) * 10); /* (logo width + total horizontal margin) * number of duplicated logos */
+    animation: scrollLogos 40s linear infinite; /* Slower, smoother scroll */
+}
+.logo-scroller img {
+    height: 40px; /* Slightly larger logos */
+    margin: 0 2rem; /* Adjust horizontal margin (2rem left + 2rem right = 4rem total) */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+.logo-scroller img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Scroll one full set of original logos */
+        transform: translateX(calc((100px + 4rem) * -5));
+    }
+}
+/* Styles for form inputs within contact section, if they were missed or need adjustment */
+#contact .form-input {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding-left: 4rem; /* Ensure this padding is consistent if icons are used */
+}
+#contact .form-input:focus {
+    background-color: rgba(255,255,255,0.08);
+    border-color: #00E5FF;
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
+}
+#contact .form-input-group i {
+    /* Ensure icon positioning is correct */
+    left: 1.25rem; 
+    /* other properties as defined before */
+}
+#contact .form-input-group textarea + i {
+    top: 1.45rem;
+    transform: translateY(0);
+}
