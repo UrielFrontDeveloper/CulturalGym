@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por Registrarte! | CULTURALGYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="img/mejorar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .funnel-body {
+            background-color: #0F172A;
+            color: #E2E8F0;
+        }
+        /* Styles from funnel-abdominales.html if needed, or ensure they are in style.css */
+    </style>
+</head>
+<body class="antialiased funnel-body font-['Inter']">
+
+    <header class="py-6">
+        <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
+            <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-16 w-16 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+        </div>
+    </header>
+
+    <section id="thank-you-page-content" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 max-w-2xl text-center">
+            <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
+                <i class="fas fa-check-circle accent-text text-6xl mb-6"></i>
+                <h1 class="text-3xl md:text-4xl font-black uppercase mb-4 leading-tight">
+                    ¡GRACIAS POR REGISTRARTE!
+                </h1>
+                <p class="text-lg text-gray-200 mb-6">
+                    Tu <span class="font-semibold accent-text">"Guía Definitiva: Los 5 Ejercicios Clave para Abdominales Estéticos"</span> está en camino a tu correo.
+                </p>
+                <p class="text-gray-300 mb-8">
+                    Hemos enviado la guía a la dirección de correo electrónico que nos proporcionaste. Por favor, revisa tu bandeja de entrada (y la carpeta de spam o promociones, por si acaso).
+                    <br>El email debería llegar en los próximos 5-10 minutos.
+                </p>
+                
+                <div class="border-t border-gray-700 my-8"></div>
+
+                <h2 class="text-xl font-semibold mb-4 text-white">Mientras esperas...</h2>
+                <p class="text-gray-300 mb-6">
+                    Conéctate con nuestra comunidad y obtén más tips y motivación:
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="https://instagram.com/culturalgym" target="_blank" class="btn btn-secondary inline-flex items-center justify-center">
+                        <i class="fab fa-instagram mr-2"></i> Síguenos en Instagram
+                    </a>
+                    <a href="index.html#plans" class="btn btn-dark-outline inline-flex items-center justify-center">
+                        <i class="fas fa-dumbbell mr-2"></i> Explora Nuestros Planes
+                    </a>
+                </div>
+                 <div class="mt-10">
+                    <a href="funnel-abdominales.html" class="text-sm accent-text hover:underline">
+                        &larr; Volver a la página anterior
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-black text-center">
+        <div class="container mx-auto px-6">
+            <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center justify-center mb-4 text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-10 w-10 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="currentYearThankYou"></span> CULTURALGYM. Todos los derechos reservados.
+            </p>
+            <p class="text-xs text-gray-600 mt-1">
+                <a href="index.html" class="hover:accent-text">Volver al sitio principal</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYearThankYou').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

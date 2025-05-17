@@ -304,3 +304,153 @@ body {
     top: 1.45rem;
     transform: translateY(0);
 }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D0D0D; /* Deep Dark Background */
+            color: #FFFFFF;
+            scroll-behavior: smooth;
+            line-height: 1.7;
+        }
+        .accent-text { color: #00E5FF; } /* Bright Cyan Accent */
+        .accent-bg { background-color: #00E5FF; }
+        .accent-border { border-color: #00E5FF; }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.04); /* Subtle glass effect */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem; /* Rounded corners for cards */
+        }
+        .ebook-header-bg {
+            background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); /* Dynamic fitness image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .ebook-header-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(13, 13, 13, 0.6), rgba(13, 13, 13, 0.98));
+        }
+        .ebook-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.3), 0 0 25px rgba(0, 229, 255, 0.2);
+        }
+        .ebook-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #B0B0B0; /* Light gray for subtitle */
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .exercise-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+        .btn {
+            padding: 0.85rem 1.8rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #00E5FF, #00B8D4);
+            color: #0D0D0D;
+            border: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 25px rgba(0, 229, 255, 0.35);
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .page-container {
+            max-width: 900px; /* Optimal reading width */
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .exercise-card {
+            margin-bottom: 3rem;
+        }
+        .exercise-card img {
+            width: 100%;
+            max-height: 400px; /* Control image height */
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid rgba(0, 229, 255, 0.2);
+        }
+        .exercise-description p {
+            margin-bottom: 1rem;
+            color: #d1d5db; /* Slightly lighter than pure white for readability */
+        }
+        .exercise-description ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .exercise-description li {
+            padding-left: 1.5em;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .exercise-description li::before {
+            content: "\f058"; /* FontAwesome check icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #00E5FF;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        .custom-hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 229, 255, 0), rgba(0, 229, 255, 0.5), rgba(0, 229, 255, 0));
+            margin: 3rem 0;
+        }
+        .ebook-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        .logo-footer {
+            height: 3rem; /* 48px */
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .ebook-title {
+                font-size: 2.2rem;
+            }
+            .ebook-subtitle {
+                font-size: 1rem;
+            }
+            .exercise-title {
+                font-size: 1.5rem;
+            }
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    
