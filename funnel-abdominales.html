@@ -9,25 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Additional styles specific to funnel if needed, or can be in style.css */
-        .funnel-body {
-            background-color: #0F172A; /* Same as index.html body or a dark theme */
-            color: #E2E8F0; /* Light text for dark background */
-        }
-        .form-input-funnel {
-            background-color: #1E293B; /* Darker input background */
-            border: 1px solid #334155;
-            color: #E2E8F0;
-        }
-        .form-input-funnel::placeholder {
-            color: #64748B;
-        }
-        .form-input-funnel:focus {
-            border-color: #00E5FF; /* Accent color border on focus */
-            box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.3);
-        }
-    </style>
+    <!-- Inline styles moved to css/style.css -->
 </head>
 <body class="antialiased funnel-body font-['Inter']">
 
@@ -69,7 +51,7 @@
                     <li class="flex items-start"><i class="fas fa-check-circle accent-text mr-3 mt-1"></i>Deja de perder el tiempo con ejercicios que no funcionan y enfócate en lo que sí da resultados.</li>
                 </ul>
 
-                <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" target="_blank">
+                <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" target="_blank" onsubmit="return handleFormSubmitAbdominales();">
                     <div>
                         <label for="fname" class="sr-only">Nombre</label>
                         <input type="text" name="GMAILNAME" id="fname" placeholder="Tu Nombre (Opcional)" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all">
@@ -108,11 +90,29 @@
         </div>
     </footer>
 
+    <!-- Inline script moved to js/script.js -->
+    <script src="js/script.js"></script>
     <script>
-        document.getElementById('currentYearFunnel').textContent = new Date().getFullYear();
-        // JavaScript for showing/hiding sections is no longer needed here.
-        // Form submission will now navigate to thank-you.html directly.
+        function handleFormSubmitAbdominales() {
+            const emailInput = document.getElementById('email');
+            if (emailInput && emailInput.value.trim() !== "" && emailInput.checkValidity()) {
+                alert("¡Tu guía ha sido entregada exitosamente a tu Gmail!");
+                setTimeout(function() {
+                    window.location.href = "thank-you.html";
+                }, 100);
+                return true;
+            } else {
+                return true; 
+            }
+        }
+        // Ensure currentYearFunnel is updated if it exists on this page too.
+        // The global script.js already handles 'currentYearFunnel', 
+        // but if it's a different ID on this page, it would need specific handling.
+        // Assuming 'currentYearFunnel' is the ID used here as well.
+        const currentYearFunnelElem = document.getElementById('currentYearFunnel');
+        if (currentYearFunnelElem) {
+            currentYearFunnelElem.textContent = new Date().getFullYear();
+        }
     </script>
-
 </body>
 </html>

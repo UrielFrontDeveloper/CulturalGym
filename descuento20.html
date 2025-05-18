@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Oferta 20% Descuento! | CULTURALGYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="img/mejorar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased funnel-body font-['Inter']">
+
+    <header class="py-6">
+        <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
+            <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-16 w-16 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+        </div>
+    </header>
+
+    <section id="discounted-plans-offer" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
+                <h1 class="text-4xl md:text-5xl font-black uppercase mb-4 leading-tight tracking-tighter">
+                    ¡OFERTA EXCLUSIVA POR TIEMPO LIMITADO!
+                </h1>
+                <p class="text-2xl accent-text font-semibold mb-6">¡OBTÉN 20% DE DESCUENTO EN PLANES SELECCIONADOS!</p>
+                
+                <div class="my-8 timer-container glassmorphism">
+                    <p class="text-xl mb-2 text-gray-300">Esta oferta increíble termina en:</p>
+                    <div id="countdown-timer-display" class="text-5xl font-bold accent-text tracking-wider py-2">
+                        <!-- Content will be injected by JavaScript -->
+                    </div>
+                </div>
+
+                <p class="text-lg md:text-xl text-gray-300 mb-10">
+                    No dejes pasar esta oportunidad única para unirte a CULTURAL<span class="accent-text">GYM</span> y comenzar tu transformación al mejor precio.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                    <!-- Plan Card 1: Mensual con 20% OFF -->
+                    <div class="plan-card glassmorphism p-6 rounded-xl flex flex-col">
+                        <h3 class="text-xl font-bold uppercase mb-2">PLAN MENSUAL</h3>
+                        <p class="text-xs text-gray-400 mb-1">Precio Original: <span class="line-through">S/ 70</span></p>
+                        <p class="accent-text text-3xl font-black">S/ 56<span class="text-base font-normal text-gray-400">/mes</span></p>
+                        <p class="text-sm text-green-400 font-semibold mb-4">¡Ahorras S/ 14!</p>
+                        <ul class="space-y-2 text-left text-sm text-gray-300 mb-6 flex-grow">
+                            <li class="plan-feature flex items-center"><i class="fas fa-check-circle text-xs mr-2"></i>Acceso completo a todas las áreas.</li>
+                            <li class="plan-feature flex items-center"><i class="fas fa-check-circle text-xs mr-2"></i>Clases grupales básicas.</li>
+                            <li class="plan-feature flex items-center"><i class="fas fa-dumbbell text-xs mr-2"></i>Uso ilimitado de máquinas.</li>
+                        </ul>
+                        <a href="checkout.html?planName=PLAN%20MENSUAL%20(Oferta)&planPrice=56&planDuration=/mes&planOriginalPrice=70&discountPercentage=20" class="btn btn-primary w-full mt-auto text-sm py-3">OBTENER OFERTA</a>
+                    </div>
+
+                    <!-- Plan Card 2: Trimestral con 20% OFF -->
+                    <div class="plan-card glassmorphism p-6 rounded-xl flex flex-col popular relative">
+                        <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 accent-bg text-gray-900 px-3 py-1 text-xs font-semibold rounded-full uppercase">Más Popular</span>
+                        <h3 class="text-xl font-bold uppercase mb-2 mt-3">PLAN TRIMESTRAL</h3>
+                        <p class="text-xs text-gray-400 mb-1">Precio Original: <span class="line-through">S/ 150</span></p>
+                        <p class="accent-text text-3xl font-black">S/ 120<span class="text-base font-normal text-gray-400">/3 meses</span></p>
+                        <p class="text-sm text-green-400 font-semibold mb-4">¡Ahorras S/ 30!</p>
+                        <ul class="space-y-2 text-left text-sm text-gray-300 mb-6 flex-grow">
+                            <li class="plan-feature flex items-center"><i class="fas fa-check-circle text-xs mr-2"></i>Todo lo del Plan Mensual.</li>
+                            <li class="plan-feature flex items-center"><i class="fas fa-star text-xs mr-2"></i>Atención personalizada inicial.</li>
+                            <li class="plan-feature flex items-center"><i class="fas fa-calendar-alt text-xs mr-2"></i>Acceso a talleres seleccionados.</li>
+                        </ul>
+                        <a href="checkout.html?planName=PLAN%20TRIMESTRAL%20(Oferta)&planPrice=120&planDuration=/3%20meses&planOriginalPrice=150&discountPercentage=20" class="btn btn-primary w-full mt-auto text-sm py-3">OBTENER OFERTA</a>
+                    </div>
+
+                    <!-- Plan Card 3: Anual con 20% OFF -->
+                    <div class="plan-card glassmorphism p-6 rounded-xl flex flex-col">
+                        <h3 class="text-xl font-bold uppercase mb-2">PLAN ANUAL</h3>
+                        <p class="text-xs text-gray-400 mb-1">Precio Original: <span class="line-through">S/ 450</span></p>
+                        <p class="accent-text text-3xl font-black">S/ 360<span class="text-base font-normal text-gray-400">/año</span></p>
+                        <p class="text-sm text-green-400 font-semibold mb-4">¡Ahorras S/ 90!</p>
+                        <ul class="space-y-2 text-left text-sm text-gray-300 mb-6 flex-grow">
+                            <li class="plan-feature flex items-center"><i class="fas fa-check-circle text-xs mr-2"></i>Todo lo del Plan Trimestral.</li>
+                            <li class="plan-feature flex items-center"><i class="fas fa-crown text-xs mr-2"></i>Seguimiento personalizado.</li>
+                            <li class="plan-feature flex items-center"><i class="fas fa-gift text-xs mr-2"></i>Eventos privados exclusivos.</li>
+                        </ul>
+                        <a href="checkout.html?planName=PLAN%20ANUAL%20(Oferta)&planPrice=360&planDuration=/año&planOriginalPrice=450&discountPercentage=20" class="btn btn-primary w-full mt-auto text-sm py-3">OBTENER OFERTA</a>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mt-10">La oferta se aplica automáticamente al proceder al pago. Válido solo para nuevas membresías.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-black text-center">
+        <div class="container mx-auto px-6">
+            <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center justify-center mb-4 text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-10 w-10 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="currentYearDiscountPage"></span> CULTURALGYM. Todos los derechos reservados.
+            </p>
+            <p class="text-xs text-gray-600 mt-1">
+                <a href="index.html" class="hover:accent-text">Volver al sitio principal</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
