@@ -24,26 +24,35 @@
     <section id="landing-page-30dias" class="py-16 md:py-24">
         <div class="container mx-auto px-6 max-w-3xl text-center">
             <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
-                <h1 class="text-4xl md:text-5xl font-black uppercase mb-4 leading-tight tracking-tighter">
-                    GUÍA DE 30 DÍAS: TU MEJOR VERSIÓN <span class="accent-text">FÍSICA Y MENTAL</span> (EDICIÓN ESTUDIANTE)
+                <!-- ATENCIÓN -->
+                <h1 class="text-4xl md:text-5xl font-black uppercase mb-6 leading-tight tracking-tighter">
+                    ¿Cansado de <span class="accent-text">estancarte</span> en el gym?
                 </h1>
+
+                <!-- INTERÉS -->
                 <p class="text-lg md:text-xl text-gray-300 mb-8">
-                    Este plan flexible está diseñado para tu vida de estudiante. Progreso constante, no perfección. ¡Ajusta el plan a tus necesidades!
+                    Descubre cómo vencer la procrastinación y ganar músculo aunque tengas <span class="accent-text">solo 3 horas libres</span> a la semana.
                 </p>
 
-                <div class="my-8">
-                    <!-- Consider using an image like 'img/estudiante-bienestar.jpg' or similar -->
-                    <img src="img/funnel30dias.jpg" alt="Guía de 30 Días Bienestar Estudiantil" class="rounded-lg mx-auto shadow-lg">
+                <div class="my-10">
+                    <img src="img/funnel30dias.jpg" alt="Guía de 30 Días Bienestar Estudiantil" class="rounded-lg mx-auto shadow-lg max-w-md">
                 </div>
 
-                <h2 class="text-2xl font-semibold mb-6 text-white">¿Qué descubrirás en esta <span class="accent-text">guía gratuita</span>?</h2>
-                <ul class="space-y-3 text-left text-gray-300 mb-10 max-w-lg mx-auto">
-                    <li class="flex items-start"><i class="fas fa-check-circle accent-text mr-3 mt-1"></i>Los 4 Pilares Fundamentales: Movimiento, Nutrición, Enfoque Mental y Descanso.</li>
-                    <li class="flex items-start"><i class="fas fa-check-circle accent-text mr-3 mt-1"></i>Plan Semanal Detallado: Rutinas físicas (15-30 min) y estrategias mentales para 4 semanas.</li>
-                    <li class="flex items-start"><i class="fas fa-check-circle accent-text mr-3 mt-1"></i>Técnicas Anti-Procrastinación: Vence la pereza y maximiza tu productividad académica.</li>
-                    <li class="flex items-start"><i class="fas fa-check-circle accent-text mr-3 mt-1"></i>Consejos de Motivación y Hábitos: Estrategias para mantenerte inspirado y construir un estilo de vida saludable.</li>
-                    <li class="flex items-start"><i class="fas fa-check-circle accent-text mr-3 mt-1"></i>Flexibilidad Total: Diseñado para adaptarse a horarios universitarios ocupados.</li>
+                <!-- DESEO -->
+                <h2 class="text-3xl font-bold mb-6 text-white">Con esta <span class="accent-text">Guía Gratuita</span> lograrás:</h2>
+                <ul class="space-y-4 text-left text-gray-300 mb-8 max-w-lg mx-auto text-lg">
+                    <li class="flex items-start"><i class="fas fa-rocket accent-text mr-3 mt-1.5"></i>Más confianza para tus reels y presentaciones.</li>
+                    <li class="flex items-start"><i class="fas fa-bolt accent-text mr-3 mt-1.5"></i>Energía imparable para aprobar tus exámenes y conquistar tu día.</li>
+                    <li class="flex items-start"><i class="fas fa-brain accent-text mr-3 mt-1.5"></i>Mente enfocada y cuerpo tonificado, ¡sin sacrificar tu vida social!</li>
                 </ul>
+                <p class="text-xl text-gray-200 mb-10">
+                    Todo esto y más en la <span class="font-bold accent-text">GUÍA DE 30 DÍAS: TU MEJOR VERSIÓN FÍSICA Y MENTAL (EDICIÓN ESTUDIANTE)</span>.
+                </p>
+
+                <!-- ACCIÓN -->
+                <p class="text-xl md:text-2xl font-semibold text-white mb-6">
+                    Descarga <span class="accent-text">GRATIS</span> la guía de 30 días <span class="accent-text">AHORA</span>
+                </p>
 
                 <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" target="_blank" onsubmit="return handleFormSubmit();">
                     <div>
@@ -87,10 +96,9 @@
             // Get the email input value
             const emailInput = document.getElementById('email-30dias');
             if (emailInput && emailInput.value.trim() !== "" && emailInput.checkValidity()) {
-                // Removed alert: alert("¡Tu ebook ha sido entregado exitosamente a tu Gmail!");
-                // Redirect to thank-you page after a short delay to allow form submission
+                // Redirect to ebook2.html page after a short delay to allow form submission
                 setTimeout(function() {
-                    window.location.href = "thank-you.html"; // Changed: Removed query parameters
+                    window.location.href = "ebook2.html"; // Changed: Redirect to ebook2.html
                 }, 100); // 100ms delay
                 return true; // Allow form submission
             } else {
