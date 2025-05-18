@@ -5,7 +5,11 @@ body {
     scroll-behavior: smooth;
 }
 .accent-text { color: #00E5FF; }
-.accent-bg { background-color: #00E5FF; }
+.accent-bg { 
+    background-color: #00E5FF; /* Fallback */
+    background-image: linear-gradient(45deg, #00E5FF, #00c5dd); /* Make it a slight gradient */
+    color: #0D0D0D; /* Ensure text on accent-bg is dark for contrast */
+}
 .accent-border { border-color: #00E5FF; }
 .glassmorphism {
     background: rgba(255, 255, 255, 0.03);
@@ -305,152 +309,526 @@ body {
     transform: translateY(0);
 }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0D0D0D; /* Deep Dark Background */
-            color: #FFFFFF;
-            scroll-behavior: smooth;
-            line-height: 1.7;
+/*etilo para pagina de descuento*/
+         /* Custom styles for this page if needed, complementing style.css and Tailwind */
+         .timer-container { /* This class is applied via Tailwind in descuento20.html */
+            background: rgba(0, 229, 255, 0.08); /* Slightly more visible background */
+            border: 1px solid rgba(0, 229, 255, 0.25); /* More prominent border */
+            padding: 2rem; /* Increased padding */
+            border-radius: 0.75rem; /* Consistent with other cards */
+            margin-bottom: 2.5rem; /* Tailwind mb-10 */
+            box-shadow: 0 5px 25px rgba(0, 229, 255, 0.15); /* Enhanced shadow */
         }
-        .accent-text { color: #00E5FF; } /* Bright Cyan Accent */
-        .accent-bg { background-color: #00E5FF; }
-        .accent-border { border-color: #00E5FF; }
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.04); /* Subtle glass effect */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem; /* Rounded corners for cards */
-        }
-        .ebook-header-bg {
-            background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); /* Dynamic fitness image */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .ebook-header-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to bottom, rgba(13, 13, 13, 0.6), rgba(13, 13, 13, 0.98));
-        }
-        .ebook-title {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.3), 0 0 25px rgba(0, 229, 255, 0.2);
-        }
-        .ebook-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            color: #B0B0B0; /* Light gray for subtitle */
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .exercise-title {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
-        }
-        .btn {
-            padding: 0.85rem 1.8rem;
-            border-radius: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: all 0.3s ease-in-out;
-            display: inline-block;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
-        }
-        .btn-primary {
-            background: linear-gradient(45deg, #00E5FF, #00B8D4);
-            color: #0D0D0D;
-            border: none;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 6px 25px rgba(0, 229, 255, 0.35);
-        }
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .page-container {
-            max-width: 900px; /* Optimal reading width */
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .exercise-card {
-            margin-bottom: 3rem;
-        }
-        .exercise-card img {
-            width: 100%;
-            max-height: 400px; /* Control image height */
-            object-fit: cover;
-            border-radius: 0.75rem;
-            margin-bottom: 1.5rem;
-            border: 2px solid rgba(0, 229, 255, 0.2);
-        }
-        .exercise-description p {
-            margin-bottom: 1rem;
-            color: #d1d5db; /* Slightly lighter than pure white for readability */
-        }
-        .exercise-description ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .exercise-description li {
-            padding-left: 1.5em;
-            position: relative;
-            margin-bottom: 0.5rem;
-        }
-        .exercise-description li::before {
-            content: "\f058"; /* FontAwesome check icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: #00E5FF;
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-        .custom-hr {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 229, 255, 0), rgba(0, 229, 255, 0.5), rgba(0, 229, 255, 0));
-            margin: 3rem 0;
-        }
-        .ebook-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-        .logo-footer {
-            height: 3rem; /* 48px */
-            width: auto;
-            margin-right: 0.5rem;
+        /* Style for the text above the timer */
+        .timer-container > p { /* Targets the <p> directly inside .timer-container */
+            font-size: 1.35rem; /* Larger text (Tailwind text-xl is 1.25rem) */
+            font-weight: 600; /* Tailwind font-semibold */
+            color: #E2E8F0; /* Lighter color for better contrast (Tailwind slate-200) */
+            margin-bottom: 1rem; /* Tailwind mb-4 */
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .ebook-title {
-                font-size: 2.2rem;
-            }
-            .ebook-subtitle {
-                font-size: 1rem;
-            }
-            .exercise-title {
-                font-size: 1.5rem;
-            }
-            .btn {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.9rem;
-            }
+        .original-price {
+            text-decoration: line-through;
+            color: #a0aec0; /* Tailwind gray-500 */
+            font-size: 0.9em;
         }
-    
+        .savings-text {
+            color: #48bb78; /* Tailwind green-500 */
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Styles from funnel-abdominales.html and thank-you.html */
+.funnel-body {
+    background-color: #0F172A; /* Dark theme for funnel pages */
+    color: #E2E8F0; /* Light text for dark background */
+}
+.form-input-funnel {
+    background-color: #1E293B; /* Darker input background */
+    border: 1px solid #334155;
+    color: #E2E8F0;
+}
+.form-input-funnel::placeholder {
+    color: #64748B;
+}
+.form-input-funnel:focus {
+    border-color: #00E5FF; /* Accent color border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.3);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #121212; /* Dark background for the ebook */
+    color: #e0e0e0; /* Light gray text for readability */
+    line-height: 1.6;
+}
+
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.accent-text {
+    color: #00E5FF; /* Bright cyan accent */
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1.ebook-title {
+    font-size: 2.8em;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h2.section-title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+    font-weight: 700;
+}
+
+h3.exercise-title, h3.section-title-card {
+    font-size: 1.6em;
+    margin-bottom: 0.8em;
+    color: #00E5FF; /* Accent color for these titles */
+}
+h3.section-title-card .accent-text {
+    color: #fff; /* White for the non-accent part if title is mostly accent */
+}
+h3.section-title-card span.accent-text {
+    color: #00E5FF; /* Ensure accent text within title is cyan */
+}
+
+
+p {
+    margin-bottom: 1em;
+    font-size: 1em;
+    color: #b0b0b0; /* Slightly dimmer than main text for paragraphs */
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 0.5em;
+    padding-left: 1.2em;
+    position: relative;
+}
+
+ul li::before {
+    content: '•';
+    color: #00E5FF; /* Accent color for bullet points */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+a {
+    color: #00E5FF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1em;
+    font-size: 1.1em;
+}
+
+.btn-primary {
+    background-color: #00E5FF;
+    color: #121212; /* Dark text on primary button */
+}
+
+.btn-primary:hover {
+    background-color: #00c4d3;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.custom-hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 229, 255, 0), rgba(0, 229, 255, 0.75), rgba(0, 229, 255, 0));
+    margin: 3em 0;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Header Styles */
+.ebook-header {
+    position: relative;
+    padding: 40px 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.ebook-header-bg { /* Specific for ebook1 */
+    background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+}
+
+.ebook-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for text contrast */
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.ebook-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f0f0f0;
+}
+
+/* Intro/Outro Section Styles */
+.intro-section, .outro-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.intro-section p, .outro-section p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+}
+
+/* Exercise Card Styles (ebook.html) */
+.exercise-card {
+    background-color: #1e1e1e; /* Slightly lighter dark shade for cards */
+    padding: 25px;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
+    border-left: 4px solid #00E5FF;
+}
+
+.exercise-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+}
+
+.exercise-description h4 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Footer Styles */
+.ebook-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #1a1a1a;
+    margin-top: 3em;
+    border-top: 2px solid #00E5FF;
+}
+
+.footer-logo-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #ffffff;
+}
+.footer-logo-link:hover {
+    text-decoration: none;
+}
+
+.logo-footer {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.ebook-footer p {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin-bottom: 0.3em;
+}
+.ebook-footer .copyright {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 1em;
+}
+
+/* ebook2 Specific Styles */
+.ebook2-body {
+    background-color: #1A202C; /* Slightly different dark for ebook2 */
+    color: #CBD5E0;
+}
+
+.ebook2-body .accent-text {
+    color: #38B2AC; /* Teal accent for ebook2 */
+}
+
+.ebook2-body h1, .ebook2-body h2, .ebook2-body h3, .ebook2-body h4, .ebook2-body h5 {
+    color: #E2E8F0;
+}
+.ebook2-body h3.section-title-card .accent-text {
+    color: #38B2AC;
+}
+.ebook2-body h3.section-title-card span.accent-text {
+     color: #38B2AC;
+}
+
+
+.ebook2-body .btn-primary {
+    background-color: #38B2AC;
+    color: #1A202C;
+}
+.ebook2-body .btn-primary:hover {
+    background-color: #319795;
+}
+
+.ebook2-body .custom-hr {
+    background-image: linear-gradient(to right, rgba(56, 178, 172, 0), rgba(56, 178, 172, 0.75), rgba(56, 178, 172, 0));
+}
+
+.ebook2-body .ebook-footer {
+    background-color: #2D3748;
+    border-top: 2px solid #38B2AC;
+}
+.ebook2-body .footer-logo-link {
+    color: #E2E8F0;
+}
+.ebook2-body .ebook-footer p {
+    color: #A0AEC0;
+}
+.ebook2-body .ebook-footer .copyright {
+    color: #718096;
+}
+
+.ebook2-subtitle-special {
+    font-size: 1em;
+    font-style: italic;
+    color: #A0AEC0;
+    margin-top: -1em;
+    margin-bottom: 1.5em;
+}
+
+.content-card {
+    background-color: #2D3748; /* Darker card for ebook2 */
+    padding: 25px;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(56, 178, 172, 0.1);
+    border-left: 4px solid #38B2AC;
+}
+
+.content-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.pillars-grid h4 {
+    font-size: 1.2em;
+    color: #E2E8F0;
+    margin-bottom: 0.3em;
+}
+.pillars-grid i {
+    margin-right: 8px;
+}
+
+.week-objective {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1.5em;
+    color: #A0AEC0;
+}
+
+.week-detail {
+    margin-bottom: 2em;
+}
+.week-detail:last-child {
+    margin-bottom: 0;
+}
+
+.day-range-title {
+    font-size: 1.3em;
+    color: #38B2AC; /* Teal for these sub-titles */
+    text-decoration: underline;
+    margin-bottom: 1em;
+}
+
+.day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 1em;
+}
+.day-grid h5 {
+    font-size: 1.1em;
+    color: #E2E8F0;
+    margin-bottom: 0.5em;
+}
+.day-grid ul {
+    padding-left: 0; /* Reset for nested lists */
+}
+.day-grid ul li::before {
+    color: #38B2AC; /* Teal bullets for ebook2 */
+}
+.day-grid .sub-list li::before {
+    content: '-'; /* Different bullet for sub-lists */
+}
+
+.fit-tip {
+    font-size: 0.95em;
+    background-color: rgba(56, 178, 172, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #38B2AC;
+    color: #CBD5E0;
+}
+.fit-tip i {
+    color: #38B2AC;
+    margin-right: 5px;
+}
+
+/* Timer Styles for descuento20.html */
+#countdown-timer-display {
+    font-family: 'Orbitron', 'Courier New', Courier, monospace; /* More futuristic digital font, fallback to Courier */
+    /* Tailwind classes: text-5xl font-bold accent-text tracking-wider py-2 */
+    line-height: 1; 
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.5); /* Add a glow to timer numbers */
+}
+
+.time-segment {
+    display: inline-block;
+    padding: 10px 14px; /* Increased padding for larger feel */
+    background-color: rgba(0, 0, 0, 0.45); /* Darker, more distinct background */
+    border-radius: 8px; 
+    margin: 0 4px; 
+    min-width: 60px; /* Approx for 2 digits with padding at text-5xl */
+    text-align: center;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.4), 0 1px 1px rgba(255,255,255,0.1); /* Inner shadow and subtle highlight */
+    border: 1px solid rgba(0, 229, 255, 0.25); 
+    font-weight: 700; /* Make digits bolder */
+}
+.time-segment.milliseconds {
+    min-width: 70px; /* Approx for 3 digits with padding at smaller font size */
+    font-size: 0.7em; 
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 10px;
+    font-weight: normal; /* Milliseconds can be normal weight */
+    border-color: rgba(0, 229, 255, 0.15);
+    text-shadow: 0 0 4px rgba(0, 229, 255, 0.4);
+}
+
+.time-separator {
+    display: inline-block;
+    margin: 0 3px; 
+    font-size: 1em; /* Match number size */
+    animation: blinkSeparator 1s infinite; /* Slower blink */
+    vertical-align: baseline; 
+    font-weight: 700; /* Bold separator */
+}
+.time-separator.ms-separator {
+    animation: none; /* Milliseconds separator shouldn't blink */
+}
+
+@keyframes blinkSeparator {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.timer-expired {
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: #FF6B6B; /* A reddish color for expired message */
+    font-weight: bold;
+    padding: 10px;
+    display: block; /* Make it take full width if needed */
+}
+
+
+/* Checkout Page Specific Styles (can be expanded) */
+.checkout-body { /* If you want a specific body class for checkout */
+    background-color: #0a0f1a; /* Slightly different dark shade if needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1.ebook-title {
+        font-size: 2.2em;
+    }
+    h2.section-title {
+        font-size: 1.8em;
+    }
+    .pillars-grid, .day-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1.ebook-title {
+        font-size: 1.8em;
+    }
+    h2.section-title {
+        font-size: 1.5em;
+    }
+    .ebook-subtitle {
+        font-size: 1em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .exercise-card, .content-card {
+        padding: 15px;
+    }
+}

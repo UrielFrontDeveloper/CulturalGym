@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Gracias por Registrarte! | CULTURALGYM</title>
+    <title>¡Gracias! | CULTURALGYM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="img/mejorar.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .funnel-body {
-            background-color: #0F172A;
-            color: #E2E8F0;
-        }
-        /* Styles from funnel-abdominales.html if needed, or ensure they are in style.css */
-    </style>
 </head>
-<body class="antialiased funnel-body font-['Inter']">
+<body class="antialiased funnel-body font-['Inter'] flex flex-col min-h-screen">
 
     <header class="py-6">
         <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
@@ -28,43 +21,34 @@
         </div>
     </header>
 
-    <section id="thank-you-page-content" class="py-16 md:py-24">
-        <div class="container mx-auto px-6 max-w-2xl text-center">
+    <main class="flex-grow py-16 md:py-24">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
             <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
-                <i class="fas fa-check-circle accent-text text-6xl mb-6"></i>
-                <h1 class="text-3xl md:text-4xl font-black uppercase mb-4 leading-tight">
-                    ¡GRACIAS POR REGISTRARTE!
+                <i class="fas fa-check-circle text-6xl accent-text mb-6"></i>
+                <h1 id="thankYouTitle" class="text-4xl md:text-5xl font-black uppercase mb-4 leading-tight tracking-tighter">
+                    <!-- Title will be injected here -->
                 </h1>
-                <p class="text-lg text-gray-200 mb-6">
-                    Tu <span class="font-semibold accent-text">"Guía Definitiva: Los 5 Ejercicios Clave para Abdominales Estéticos"</span> está en camino a tu correo.
+                <p id="thankYouMessage" class="text-lg md:text-xl text-gray-300 mb-8">
+                    <!-- Message will be injected here -->
                 </p>
-                <p class="text-gray-300 mb-8">
-                    Hemos enviado la guía a la dirección de correo electrónico que nos proporcionaste. Por favor, revisa tu bandeja de entrada (y la carpeta de spam o promociones, por si acaso).
-                    <br>El email debería llegar en los próximos 5-10 minutos.
-                </p>
-                
-                <div class="border-t border-gray-700 my-8"></div>
 
-                <h2 class="text-xl font-semibold mb-4 text-white">Mientras esperas...</h2>
-                <p class="text-gray-300 mb-6">
-                    Conéctate con nuestra comunidad y obtén más tips y motivación:
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="https://instagram.com/culturalgym" target="_blank" class="btn btn-secondary inline-flex items-center justify-center">
-                        <i class="fab fa-instagram mr-2"></i> Síguenos en Instagram
-                    </a>
-                    <a href="index.html#plans" class="btn btn-dark-outline inline-flex items-center justify-center">
-                        <i class="fas fa-dumbbell mr-2"></i> Explora Nuestros Planes
+                <div id="ebookPreview" class="my-8 hidden"> <!-- Hidden by default, shown if there's an ebook -->
+                    <img id="ebookImage" src="" alt="Vista Previa del Ebook" class="rounded-lg mx-auto shadow-lg max-h-80 mb-6">
+                    <a id="ebookLink" href="#" class="btn btn-primary text-lg py-3 px-6">
+                        <!-- Link text will be injected here -->
                     </a>
                 </div>
-                 <div class="mt-10">
-                    <a href="funnel-abdominales.html" class="text-sm accent-text hover:underline">
-                        &larr; Volver a la página anterior
-                    </a>
+                
+                <p class="text-gray-400 mt-10">
+                    Mientras tanto, ¿por qué no exploras más sobre CULTURAL<span class="accent-text">GYM</span>?
+                </p>
+                <div class="mt-6">
+                    <a href="index.html#services" class="btn btn-secondary mr-2 mb-2">Nuestros Servicios</a>
+                    <a href="index.html#contact" class="btn btn-secondary mb-2">Contáctanos</a>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <footer class="py-10 bg-black text-center">
         <div class="container mx-auto px-6">
@@ -81,9 +65,55 @@
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
     <script>
-        document.getElementById('currentYearThankYou').textContent = new Date().getFullYear();
-    </script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const source = urlParams.get('source');
 
+            const titleEl = document.getElementById('thankYouTitle');
+            const messageEl = document.getElementById('thankYouMessage');
+            const ebookPreviewEl = document.getElementById('ebookPreview');
+            const ebookImageEl = document.getElementById('ebookImage');
+            const ebookLinkEl = document.getElementById('ebookLink');
+
+            let titleText = "¡GRACIAS POR TU INTERÉS!";
+            let messageText = "Hemos recibido tu solicitud. Revisa tu correo electrónico (y la carpeta de spam) para más detalles.";
+            let ebookImageUrl = "";
+            let ebookLinkUrl = "";
+            let ebookLinkText = "";
+
+            if (source === 'guia30dias') {
+                titleText = "¡TU GUÍA DE 30 DÍAS ESTÁ EN CAMINO!";
+                messageText = "¡Excelente decisión! Hemos enviado la 'Guía de 30 Días: Tu Mejor Versión (Edición Estudiante)' a tu correo electrónico. Deberías recibirla en unos minutos. ¡No olvides revisar tu carpeta de spam por si acaso!";
+                ebookImageUrl = "img/funnel30dias.jpg"; // o una imagen genérica de la guía
+                ebookLinkUrl = "ebook2.html";
+                ebookLinkText = "Acceder a la Guía de 30 Días";
+            } else if (source === 'abdominales') {
+                titleText = "¡TU GUÍA DE ABDOMINALES ESTÁ LISTA!";
+                messageText = "¡Prepárate para esculpir! Hemos enviado la guía '5 Ejercicios Clave para Abdominales Estéticos' a tu correo electrónico. Búscala en tu bandeja de entrada (¡y en spam, por si las moscas!).";
+                ebookImageUrl = "img/abdomen perfecto.jpg"; // o una imagen genérica de la guía
+                ebookLinkUrl = "ebook.html";
+                ebookLinkText = "Acceder a la Guía de Abdominales";
+            }
+
+            titleEl.textContent = titleText;
+            messageEl.textContent = messageText;
+
+            if (ebookImageUrl && ebookLinkUrl && ebookLinkText) {
+                ebookImageEl.src = ebookImageUrl;
+                ebookImageEl.alt = `Vista previa de ${source === 'guia30dias' ? 'Guía de 30 Días' : 'Guía de Abdominales'}`;
+                ebookLinkEl.href = ebookLinkUrl;
+                ebookLinkEl.textContent = ebookLinkText;
+                ebookPreviewEl.classList.remove('hidden');
+            }
+            
+            // Update current year in footer (using the ID from this page)
+            const currentYearThankYou = document.getElementById('currentYearThankYou');
+            if (currentYearThankYou) {
+                currentYearThankYou.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
 </html>
