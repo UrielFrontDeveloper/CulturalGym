@@ -54,10 +54,10 @@
                     Descarga <span class="accent-text">GRATIS</span> la guía de 30 días <span class="accent-text">AHORA</span>
                 </p>
 
-                <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" target="_blank" onsubmit="return handleFormSubmit();">
+                <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" onsubmit="handleFormSubmit(event);">
                     <div>
                         <label for="fname-30dias" class="sr-only">Nombre</label>
-                        <input type="text" name="GMAILNAME" id="fname-30dias" placeholder="Tu Nombre (Opcional)" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all">
+                        <input type="text" name="MERGE8" id="fname-30dias" placeholder="Tu Nombre (Opcional)" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all">
                     </div>
                     <div>
                         <label for="email-30dias" class="sr-only">Correo Electrónico</label>
@@ -92,19 +92,49 @@
 
     <script src="js/script.js"></script>
     <script>
-        function handleFormSubmit() {
-            // Get the email input value
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent default synchronous form submission
+
+            const form = event.target; // Get the form element
             const emailInput = document.getElementById('email-30dias');
+
             if (emailInput && emailInput.value.trim() !== "" && emailInput.checkValidity()) {
-                // Redirect to ebook2.html page after a short delay to allow form submission
-                setTimeout(function() {
-                    window.location.href = "thank-you.html"; // Changed: Redirect to ebook2.html
-                }, 100); // 100ms delay
-                return true; // Allow form submission
+                const formData = new FormData(form);
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = 'Enviando...';
+                }
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Important for Mailchimp: sends data without needing to process response or deal with CORS
+                })
+                .then(() => {
+                    // Request to Mailchimp initiated.
+                    // Redirect to your thank-you page where you can display a success message.
+                    window.location.href = "thank-you.html";
+                })
+                .catch(error => {
+                    console.error('Error submitting form to Mailchimp:', error);
+                    // Display an error message to the user
+                    alert('Hubo un problema al enviar tus datos. Por favor, inténtalo de nuevo.');
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    }
+                });
             } else {
-                // If email is invalid or empty, let the browser handle the 'required' validation
-                // or add custom handling here if needed.
-                return true; // Or false if you want to prevent submission until valid
+                // If form is not valid, HTML5 validation messages should appear automatically.
+                // If submitButton was changed, ensure it's reset if validation fails client-side before fetch
+                const submitButton = form.querySelector('button[type="submit"]');
+                 if (submitButton && submitButton.disabled) {
+                    // This case might not be hit if browser validation stops submission earlier
+                    // but added for robustness if custom validation logic were to allow submission attempt.
+                 }
             }
         }
 

@@ -167,5 +167,256 @@ document.addEventListener('DOMContentLoaded', function() {
     updateYear('currentYearThankYou'); // For thank-you.html
     updateYear('currentYearCheckout'); // For checkout.html
     updateYear('currentYearDiscountPage'); // For descuento20.html
+
+    // Funciones movidas desde index.html y otros archivos funnel
+    function redirectToCheckoutWithDiscount(event) {
+        event.preventDefault(); 
+        
+        const form = event.target;
+        const email = form.EMAIL.value;
+        // Asegúrate de que el campo MESSAGE exista en el formulario que llama a esta función
+        const messageInput = form.MESSAGE;
+        const message = messageInput ? messageInput.value.toLowerCase() : ""; 
+
+        let planName = "PLAN MENSUAL"; 
+        let planPrice = 70;
+        let planDuration = "/mes";
+        let planOriginalPrice = 70;
+
+        if (message.includes("trimestral")) {
+            planName = "PLAN TRIMESTRAL";
+            planPrice = 150;
+            planDuration = "/3 meses";
+            planOriginalPrice = 150;
+        } else if (message.includes("anual")) {
+            planName = "PLAN ANUAL";
+            planPrice = 450;
+            planDuration = "/año";
+            planOriginalPrice = 450;
+        } else if (message.includes("2 meses") || message.includes("dos meses")) {
+            planName = "PLAN 2 MESES";
+            planPrice = 130;
+            planDuration = "/2 meses";
+            planOriginalPrice = 130;
+        } else if (message.includes("6 meses") || message.includes("seis meses")) {
+            planName = "PLAN 6 MESES";
+            planPrice = 300;
+            planDuration = "/6 meses";
+            planOriginalPrice = 300;
+        }
+        
+        const checkoutUrl = `checkout.html?planName=${encodeURIComponent(planName)}&planPrice=${planPrice}&planDuration=${encodeURIComponent(planDuration)}&planOriginalPrice=${planOriginalPrice}&discountPercentage=20&email=${encodeURIComponent(email)}`;
+        window.location.href = checkoutUrl;
+    }
+
+    function handleIndexFormSubmit(event) {
+        event.preventDefault(); 
+        console.log("handleIndexFormSubmit iniciado, event.preventDefault() llamado.");
+
+        const form = event.target; 
+
+        if (form.checkValidity()) {
+            const formData = new FormData(form);
+            
+            // console.log("Datos del formulario (contacto index) que se intentarán enviar a Mailchimp:");
+            // for (var pair of formData.entries()) {
+            //     console.log(pair[0]+ ': ' + pair[1]); 
+            // }
+
+            const submitButton = form.querySelector('button[type="submit"]');
+            // const originalButtonText = submitButton.innerHTML; // No es necesario si la página se recarga
+            
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Enviando...';
+            }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' 
+            })
+            .then(() => {
+                // Intento de envío completado (no podemos confirmar éxito con no-cors)
+                console.log("Fetch a Mailchimp (contacto index) completado. Recargando página...");
+                window.location.reload(); // Recargar la página actual
+            })
+            .catch(error => {
+                console.error('Error submitting contact form to Mailchimp:', error);
+                // Incluso si hay un error de red, recargamos la página como solicitado.
+                // Si prefieres un comportamiento diferente en caso de error (ej. no recargar y mostrar error),
+                // puedes cambiarlo aquí.
+                window.location.reload(); // Recargar la página actual
+            });
+        } else {
+            form.reportValidity();
+            console.log("Formulario de contacto (index) no válido.");
+        }
+    }
+
+    function handleNewsletterFormSubmit(event) {
+        event.preventDefault(); // ¡PRIMERA LÍNEA Y MÁS IMPORTANTE!
+        console.log("handleNewsletterFormSubmit ejecutado. event.preventDefault() llamado.");
+
+        const form = event.target; 
+        const emailInput = form.EMAIL;
+
+        if (emailInput && emailInput.value.trim() !== "" && emailInput.checkValidity()) {
+            const formData = new FormData(form);
+            // console.log("Datos del formulario (newsletter) que se intentarán enviar a Mailchimp:");
+            // for (var pair of formData.entries()) {
+            //     console.log(pair[0]+ ': ' + pair[1]); 
+            // }
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonIconHTML = submitButton.innerHTML; 
+            
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>'; 
+            }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' 
+            })
+            .then(() => {
+                if (submitButton) {
+                    submitButton.innerHTML = '<i class="fas fa-check"></i>'; 
+                }
+                form.reset(); 
+                
+                setTimeout(() => {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonIconHTML;
+                    }
+                }, 3000); 
+            })
+            .catch(error => {
+                console.error('Error submitting newsletter form to Mailchimp:', error);
+                // No mostramos alert para no interrumpir, pero sí en consola.
+                // Podrías cambiar el ícono a una X de error si prefieres.
+                if (submitButton) {
+                    submitButton.innerHTML = '<i class="fas fa-times"></i>'; // Ícono de error
+                     setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonIconHTML;
+                }, 3000);
+                }
+            });
+            return false; // Añadido para reforzar la prevención de la acción por defecto
+        } else {
+            if (emailInput && !emailInput.checkValidity()) {
+                 emailInput.reportValidity();
+            } else if (form) {
+                form.reportValidity();
+            }
+            console.log("Formulario de newsletter no válido o email vacío.");
+            return false; // También aquí por si la validación falla antes del fetch
+        }
+    }
+
+    // Para funnel-guiade30dias.html (asegúrate que el ID del email input sea 'email-30dias')
+    function handleGuia30DiasFormSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const emailInput = document.getElementById('email-30dias'); // ID específico de este funnel
+
+        if (emailInput && emailInput.value.trim() !== "" && emailInput.checkValidity()) {
+            const formData = new FormData(form);
+            // console.log("Datos del formulario (guia 30 dias) que se intentarán enviar a Mailchimp:");
+            // for (var pair of formData.entries()) {
+            //     console.log(pair[0]+ ': ' + pair[1]); 
+            // }
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Enviando...';
+            }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                window.location.href = "thank-you.html"; // Este funnel SÍ redirige
+            })
+            .catch(error => {
+                console.error('Error submitting Guia 30 Dias form to Mailchimp:', error);
+                alert('Hubo un problema al enviar tus datos. Por favor, inténtalo de nuevo.');
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                }
+            });
+        } else {
+           if (form.checkValidity() === false) {
+                form.reportValidity();
+            }
+        }
+    }
+
+    // Para funnel-abdominales.html (asegúrate que el ID del email input sea 'email-abdominales')
+    function handleAbdominalesFormSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const emailInput = document.getElementById('email-abdominales'); // ID específico de este funnel
+
+        if (emailInput && emailInput.value.trim() !== "" && emailInput.checkValidity()) {
+            const formData = new FormData(form);
+             console.log("Datos del formulario (abdominales) que se intentarán enviar a Mailchimp:");
+            for (var pair of formData.entries()) {
+                console.log(pair[0]+ ': ' + pair[1]); 
+            }
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Enviando...';
+            }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                window.location.href = "thank-you.html";
+            })
+            .catch(error => {
+                console.error('Error submitting Abdominales form to Mailchimp:', error);
+                alert('Hubo un problema al enviar tus datos. Por favor, inténtalo de nuevo.');
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                }
+            });
+        } else {
+            if (form.checkValidity() === false) {
+                form.reportValidity();
+            }
+        }
+    }
+
+
+    // Actualizar año en footer - generalizado
+    function updateFooterYear() {
+        const yearSpan = document.getElementById('currentYear') || document.getElementById('currentYearFunnel') || document.getElementById('currentYearIndex') || document.getElementById('currentYearAbdominales'); // Agrega más IDs si es necesario
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    }
+
+    // Llamar a las funciones que deben ejecutarse al cargar el DOM
+    document.addEventListener('DOMContentLoaded', function() {
+        updateFooterYear();
+        // Aquí puedes añadir otras inicializaciones que dependan del DOM
+        // Por ejemplo, si el código del slider Slick o del menú móvil no está ya en un $(document).ready()
+    });
 });
 

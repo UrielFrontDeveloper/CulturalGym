@@ -51,29 +51,31 @@
                     <li class="flex items-start"><i class="fas fa-check-circle accent-text mr-3 mt-1"></i>Deja de perder el tiempo con ejercicios que no funcionan y enfócate en lo que sí da resultados.</li>
                 </ul>
 
-                <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" target="_blank" onsubmit="return handleFormSubmitAbdominales();">
+                <!-- ACCIÓN (Example structure, adapt to your actual content) -->
+                <p class="text-xl md:text-2xl font-semibold text-white mb-6">
+                    Descarga <span class="accent-text">GRATIS</span> la guía de abdominales <span class="accent-text">AHORA</span>
+                </p>
+
+                <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" onsubmit="handleAbdominalesFormSubmit(event);">
                     <div>
-                        <label for="fname" class="sr-only">Nombre</label>
-                        <input type="text" name="GMAILNAME" id="fname" placeholder="Tu Nombre (Opcional)" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all">
+                        <label for="fname-abdominales" class="sr-only">Nombre</label>
+                        <input type="text" name="GMAILNAME" id="fname-abdominales" placeholder="Tu Nombre (Opcional)" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all">
                     </div>
                     <div>
-                        <label for="email" class="sr-only">Correo Electrónico</label>
-                        <input type="email" name="EMAIL" id="email" placeholder="Tu Correo Electrónico Principal" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                        <label for="email-abdominales" class="sr-only">Correo Electrónico</label>
+                        <input type="email" name="EMAIL" id="email-abdominales" placeholder="Tu Correo Electrónico Principal" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all" required>
                     </div>
                     <div style="position: absolute; left: -5000px;" aria-hidden="true">
                         <input type="text" name="b_112d6951e1d98603d40cc8218_06312b0fb7" tabindex="-1" value="">
                     </div>
                     <button type="submit" class="btn btn-primary w-full text-lg py-4">
-                        QUIERO MI GUÍA GRATIS
+                        ¡QUIERO MI GUÍA DE ABDOMINALES!
                     </button>
                 </form>
                 <p class="text-xs text-gray-500 mt-4">Respetamos tu privacidad. No spam.</p>
             </div>
         </div>
     </section>
-
-    <!-- THANK YOU PAGE SECTION (Conceptually, this would be a separate page or shown after submission) -->
-    <!-- This section has been moved to thank-you.html -->
 
     <footer class="py-10 bg-black text-center">
         <div  class="container mx-auto px-6">
@@ -90,28 +92,49 @@
         </div>
     </footer>
 
-    <!-- Inline script moved to js/script.js -->
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script> <!-- Assuming you have a general script.js -->
     <script>
-        function handleFormSubmitAbdominales() {
-            const emailInput = document.getElementById('email');
+        function handleAbdominalesFormSubmit(event) {
+            event.preventDefault(); // Prevent default synchronous form submission
+
+            const form = event.target; // Get the form element
+            const emailInput = document.getElementById('email-abdominales'); // Ensure this ID matches your email input
+
             if (emailInput && emailInput.value.trim() !== "" && emailInput.checkValidity()) {
-                alert("¡Tu guía ha sido entregada exitosamente a tu Gmail!");
-                setTimeout(function() {
+                const formData = new FormData(form);
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = 'Enviando...';
+                }
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' 
+                })
+                .then(() => {
                     window.location.href = "thank-you.html";
-                }, 100);
-                return true;
+                })
+                .catch(error => {
+                    console.error('Error submitting form to Mailchimp:', error);
+                    alert('Hubo un problema al enviar tus datos. Por favor, inténtalo de nuevo.');
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    }
+                });
             } else {
-                return true; 
+                // HTML5 validation messages should appear
             }
         }
-        // Ensure currentYearFunnel is updated if it exists on this page too.
-        // The global script.js already handles 'currentYearFunnel', 
-        // but if it's a different ID on this page, it would need specific handling.
-        // Assuming 'currentYearFunnel' is the ID used here as well.
-        const currentYearFunnelElem = document.getElementById('currentYearFunnel');
-        if (currentYearFunnelElem) {
-            currentYearFunnelElem.textContent = new Date().getFullYear();
+
+        // If you have a current year script, keep it or adapt it
+        const currentYearAbs = document.getElementById('currentYearAbdominales'); // Example ID
+        if (currentYearAbs) {
+            currentYearAbs.textContent = new Date().getFullYear();
         }
     </script>
 </body>

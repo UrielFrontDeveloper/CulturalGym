@@ -54,7 +54,7 @@
         <div class="level-up-text top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[-10%] select-none">UP</div>
         <div class="container mx-auto px-6 relative z-10">
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase mb-6 leading-tight tracking-tighter">
-                LISTO PARA<br><span class="accent-text" style="text-shadow: 0 0 25px #00E5FF, 0 0 40px #00B8D4;">ENTRENAR</span><br>TU CUERPO
+                LISTO PARA<br><span class="accent-text hero-accent-text-shadow">ENTRENAR</span><br>TU CUERPO
             </h1>
             <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
                 Únete a la comunidad de CULTURALGYM y transforma tu vida con nuestros programas de entrenamiento de élite y planes personalizados.
@@ -205,7 +205,7 @@
                 <p class="text-gray-300 mb-8 leading-relaxed">Queremos ser tu gimnasio de confianza, el aliado más cercano en tu camino hacia la superación. Disfruta de un ambiente agradable y energético, perfecto para un público joven y dinámico como tú.</p>
                 <a href="#contact" class="btn btn-secondary">SOBRE NOSOTROS</a> </div>
             <div class="md:w-1/2">
-                <img src="img/nosotros.png" alt="Imagen de experiencia en el gimnasio" class="rounded-xl shadow-2xl w-full h-auto object-cover" style="max-height: 550px;">
+                <img src="img/nosotros.png" alt="Imagen de experiencia en el gimnasio" class="rounded-xl shadow-2xl w-full h-auto object-cover experience-image">
             </div>
         </div>
         </div>
@@ -237,12 +237,12 @@
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-16 contact-form-container p-8 md:p-12 rounded-xl shadow-2xl overflow-hidden">
                 <div class="md:w-2/5">
-                    <img src="img/formulario.png" alt="Persona entrenando con determinación" class="rounded-lg shadow-lg w-full h-auto object-cover" style="max-height: 480px;">
+                    <img src="img/formulario.png" alt="Persona entrenando con determinación" class="rounded-lg shadow-lg w-full h-auto object-cover contact-form-image">
                 </div>
                 <div class="md:w-3/5 text-center md:text-left">
                     <h2 class="section-title leading-tight">COMENCEMOS TU<br><span class="accent-text">TRANSFORMACIÓN</span><br>AHORA MISMO</h2>
                     <p class="text-gray-300 mb-8">Obtén un <span class="accent-text font-semibold">20% extra de descuento</span> en tu primera Plan al inscribirte en mayo. ¡No esperes más! y registrate</p>
-                    <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" target="_blank" onsubmit="redirectToCheckoutWithDiscount(event)">
+                    <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&id=06312b0fb7&f_id=004477e1f0" method="POST" class="space-y-6" onsubmit="handleIndexFormSubmit(event);">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class=" form-input-group">
                                 <i class="fas fa-user"></i>
@@ -335,8 +335,12 @@
                 <div class="md:col-span-3 lg:col-span-1">
                      <h5 class="text-lg font-semibold text-white uppercase mb-4 tracking-wider">Boletín Informativo</h5>
                      <p class="text-gray-400 text-sm mb-3">Recibe ofertas exclusivas y noticias del gym.</p>
-                     <form action="#" class="flex">
-                        <input type="email" placeholder="Tu email" class="w-full p-3 rounded-l-md bg-gray-800 border border-gray-700 text-sm outline-none focus:border-cyan-500">
+                     <form action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&amp;id=06312b0fb7&amp;f_id=004477e1f0" method="POST" class="flex" onsubmit="return handleNewsletterFormSubmit(event);">
+                        <input type="email" name="EMAIL" id="footer-newsletter-email" placeholder="Tu email" class="w-full p-3 rounded-l-md bg-gray-800 border border-gray-700 text-sm outline-none focus:border-cyan-500" required>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_112d6951e1d98603d40cc8218_06312b0fb7" tabindex="-1" value="">
+                        </div>
                         <button type="submit" class="accent-bg text-gray-900 p-3 rounded-r-md font-semibold hover:bg-cyan-300 transition-colors"><i class="fas fa-paper-plane"></i></button>
                      </form>
                 </div>
@@ -352,51 +356,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        function redirectToCheckoutWithDiscount(event) {
-            event.preventDefault(); // Prevent Mailchimp submission for now, or handle it differently
-            
-            const form = event.target;
-            const email = form.EMAIL.value;
-            const message = form.MESSAGE.value.toLowerCase(); // Get message to infer plan
-
-            // Basic plan inference from message - this is very rudimentary
-            let planName = "PLAN MENSUAL"; // Default plan
-            let planPrice = 70;
-            let planDuration = "/mes";
-            let planOriginalPrice = 70;
-
-            if (message.includes("trimestral")) {
-                planName = "PLAN TRIMESTRAL";
-                planPrice = 150;
-                planDuration = "/3 meses";
-                planOriginalPrice = 150;
-            } else if (message.includes("anual")) {
-                planName = "PLAN ANUAL";
-                planPrice = 450;
-                planDuration = "/año";
-                planOriginalPrice = 450;
-            } else if (message.includes("2 meses") || message.includes("dos meses")) {
-                planName = "PLAN 2 MESES";
-                planPrice = 130;
-                planDuration = "/2 meses";
-                planOriginalPrice = 130;
-            } else if (message.includes("6 meses") || message.includes("seis meses")) {
-                planName = "PLAN 6 MESES";
-                planPrice = 300;
-                planDuration = "/6 meses";
-                planOriginalPrice = 300;
-            }
-            // Add more robust plan detection if needed, or a dropdown for plan selection
-
-            // For Mailchimp submission, you might want to submit via AJAX first,
-            // then redirect, or open Mailchimp in new tab and redirect current.
-            // For simplicity, this example just redirects.
-            // form.submit(); // Uncomment if you want to submit to Mailchimp first in the same tab (will navigate away)
-
-            const checkoutUrl = `checkout.html?planName=${encodeURIComponent(planName)}&planPrice=${planPrice}&planDuration=${encodeURIComponent(planDuration)}&planOriginalPrice=${planOriginalPrice}&discountPercentage=20&email=${encodeURIComponent(email)}`;
-            window.location.href = checkoutUrl;
-        }
-    </script>
 </body>
 </html>
