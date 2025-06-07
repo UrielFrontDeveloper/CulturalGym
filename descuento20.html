@@ -3,88 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Oferta 20% Descuento! | CULTURALGYM</title>
+    <title>🔥 ¡Solo HOY 20% OFF! | CULTURALGYM - Oferta Limitada</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="img/mejorar.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="antialiased funnel-body font-['Inter']">
+<body class="antialiased discount-page-body font-['Inter']">
 
-    <header class="py-6">
+    <!-- Barra de urgencia superior -->
+    <div class="bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white text-center py-3 px-4 animate-pulse border-b border-red-500/30">
+        <div class="flex items-center justify-center space-x-2 text-sm font-bold">
+            <i class="fas fa-fire animate-bounce text-orange-300 drop-shadow-lg"></i>
+            <span>🔥 OFERTA FLASH: Solo quedan <span id="spots-left" class="bg-white text-red-600 px-2 py-1 rounded font-bold shadow-lg">7</span> cupos disponibles</span>
+            <i class="fas fa-fire animate-bounce text-orange-300 drop-shadow-lg"></i>
+        </div>
+    </div>
+
+    <header class="py-6 relative">
         <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
             <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center text-white">
                 <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-16 w-16 mr-2">
                 <span>CULTURAL<span class="accent-text">GYM</span></span>
             </a>
         </div>
+        <!-- Badge de oferta especial -->
+        <div class="absolute top-4 right-4 discount-badge urgent animate-bounce">
+            ¡SOLO HOY!
+        </div>
     </header>
 
-    <section id="discounted-plans-offer" class="py-16 md:py-24">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
-                <h1 class="text-4xl md:text-5xl font-black uppercase mb-4 leading-tight tracking-tighter">
-                    ¡OFERTA EXCLUSIVA POR TIEMPO LIMITADO!
-                </h1>
-                <p class="text-2xl accent-text font-semibold mb-6">¡OBTÉN 20% DE DESCUENTO EN PLANES SELECCIONADOS!</p>
+    <section id="discounted-plans-offer" class="py-8 md:py-16">
+        <div class="container mx-auto px-6 max-w-6xl">
+            
+            <!-- Hero mejorado -->
+            <div class="text-center mb-12">
+                <div class="inline-block discount-badge urgent mb-4 animate-pulse">
+                    <i class="fas fa-bolt mr-2"></i>OFERTA FLASH ACTIVADA
+                </div>
                 
-                <div class="my-8 timer-container glassmorphism">
-                    <p class="text-xl mb-2 text-gray-300">Esta oferta increíble termina en:</p>
-                    <div id="countdown-timer-display" class="text-5xl font-bold accent-text tracking-wider py-2">
-                        <!-- Content will be injected by JavaScript -->
+                <h1 class="text-5xl md:text-7xl font-black uppercase mb-6 leading-tight">
+                    <span class="block text-white">¡ÚLTIMAS</span>
+                    <span class="block accent-text">HORAS!</span>
+                </h1>
+                
+                <div class="text-3xl md:text-4xl font-bold accent-text mb-8">
+                    🎯 20% DE DESCUENTO GARANTIZADO
+                </div>
+
+                <!-- Timer mejorado -->
+                <div class="max-w-lg mx-auto mb-8">
+                    <div class="discount-timer">
+                        <div class="text-white text-lg font-semibold mb-4 flex items-center justify-center">
+                            <i class="fas fa-hourglass-half accent-text mr-2 animate-spin drop-shadow-lg"></i>
+                            Esta oferta TERMINA en:
+                        </div>
+                        <div id="countdown-timer-display" class="text-4xl md:text-5xl font-bold discount-timer-display tracking-wider font-mono">
+                            <!-- Content will be injected by JavaScript -->
+                        </div>
+                        <div class="text-red-300 text-sm mt-2 font-medium">
+                            ⚠️ Después de esto, vuelve al precio normal
+                        </div>
                     </div>
                 </div>
 
-                <p class="text-lg md:text-xl text-gray-300 mb-10">
-                    No dejes pasar esta oportunidad única para unirte a CULTURAL<span class="accent-text">GYM</span> y comenzar tu transformación al mejor precio.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-                    <!-- Plan Card 1: Mensual con 20% OFF -->
-                    <div class="plan-card glassmorphism p-6 rounded-xl flex flex-col">
-                        <h3 class="text-xl font-bold uppercase mb-2">PLAN MENSUAL</h3>
-                        <p class="text-xs text-gray-400 mb-1">Precio Original: <span class="line-through">S/ 70</span></p>
-                        <p class="accent-text text-3xl font-black">S/ 56<span class="text-base font-normal text-gray-400">/mes</span></p>
-                        <p class="text-sm text-green-400 font-semibold mb-4">¡Ahorras S/ 14!</p>
-                        <ul class="space-y-2 text-left text-sm text-gray-300 mb-6 flex-grow">
-                            <li class="plan-feature flex items-center"><i class="fas fa-check-circle text-xs mr-2"></i>Acceso completo a todas las áreas.</li>
-                            <li class="plan-feature flex items-center"><i class="fas fa-check-circle text-xs mr-2"></i>Clases grupales básicas.</li>
-                            <li class="plan-feature flex items-center"><i class="fas fa-dumbbell text-xs mr-2"></i>Uso ilimitado de máquinas.</li>
-                        </ul>
-                        <a href="checkout.html?planName=PLAN%20MENSUAL%20(Oferta)&planPrice=56&planDuration=/mes&planOriginalPrice=70&discountPercentage=20" class="btn btn-primary w-full mt-auto text-sm py-3">OBTENER OFERTA</a>
+                <!-- Prueba social mejorada -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-8">
+                    <div class="discount-social-proof discount-hover-lift">
+                        <div class="text-2xl font-bold discount-icon-cyan">247</div>
+                        <div class="text-xs text-gray-300">Personas comprando</div>
                     </div>
-
-                    <!-- Plan Card 2: Trimestral con 20% OFF -->
-                    <div class="plan-card glassmorphism p-6 rounded-xl flex flex-col popular relative">
-                        <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 accent-bg text-gray-900 px-3 py-1 text-xs font-semibold rounded-full uppercase">Más Popular</span>
-                        <h3 class="text-xl font-bold uppercase mb-2 mt-3">PLAN TRIMESTRAL</h3>
-                        <p class="text-xs text-gray-400 mb-1">Precio Original: <span class="line-through">S/ 150</span></p>
-                        <p class="accent-text text-3xl font-black">S/ 120<span class="text-base font-normal text-gray-400">/3 meses</span></p>
-                        <p class="text-sm text-green-400 font-semibold mb-4">¡Ahorras S/ 30!</p>
-                        <ul class="space-y-2 text-left text-sm text-gray-300 mb-6 flex-grow">
-                            <li class="plan-feature flex items-center"><i class="fas fa-check-circle text-xs mr-2"></i>Todo lo del Plan Mensual.</li>
-                            <li class="plan-feature flex items-center"><i class="fas fa-star text-xs mr-2"></i>Atención personalizada inicial.</li>
-                            <li class="plan-feature flex items-center"><i class="fas fa-calendar-alt text-xs mr-2"></i>Acceso a talleres seleccionados.</li>
-                        </ul>
-                        <a href="checkout.html?planName=PLAN%20TRIMESTRAL%20(Oferta)&planPrice=120&planDuration=/3%20meses&planOriginalPrice=150&discountPercentage=20" class="btn btn-primary w-full mt-auto text-sm py-3">OBTENER OFERTA</a>
+                    <div class="discount-social-proof discount-hover-lift">
+                        <div class="text-2xl font-bold discount-icon-success">93%</div>
+                        <div class="text-xs text-gray-300">Aprovechan oferta</div>
                     </div>
-
-                    <!-- Plan Card 3: Anual con 20% OFF -->
-                    <div class="plan-card glassmorphism p-6 rounded-xl flex flex-col">
-                        <h3 class="text-xl font-bold uppercase mb-2">PLAN ANUAL</h3>
-                        <p class="text-xs text-gray-400 mb-1">Precio Original: <span class="line-through">S/ 450</span></p>
-                        <p class="accent-text text-3xl font-black">S/ 360<span class="text-base font-normal text-gray-400">/año</span></p>
-                        <p class="text-sm text-green-400 font-semibold mb-4">¡Ahorras S/ 90!</p>
-                        <ul class="space-y-2 text-left text-sm text-gray-300 mb-6 flex-grow">
-                            <li class="plan-feature flex items-center"><i class="fas fa-check-circle text-xs mr-2"></i>Todo lo del Plan Trimestral.</li>
-                            <li class="plan-feature flex items-center"><i class="fas fa-crown text-xs mr-2"></i>Seguimiento personalizado.</li>
-                            <li class="plan-feature flex items-center"><i class="fas fa-gift text-xs mr-2"></i>Eventos privados exclusivos.</li>
-                        </ul>
-                        <a href="checkout.html?planName=PLAN%20ANUAL%20(Oferta)&planPrice=360&planDuration=/año&planOriginalPrice=450&discountPercentage=20" class="btn btn-primary w-full mt-auto text-sm py-3">OBTENER OFERTA</a>
+                    <div class="discount-social-proof discount-hover-lift">
+                        <div class="text-2xl font-bold discount-icon-cyan">1,847</div>
+                        <div class="text-xs text-gray-300">Ya se unieron</div>
+                    </div>
+                    <div class="discount-social-proof discount-hover-lift">
+                        <div class="text-2xl font-bold text-red-400">7</div>
+                        <div class="text-xs text-gray-300">Cupos restantes</div>
                     </div>
                 </div>
-                <p class="text-xs text-gray-500 mt-10">La oferta se aplica automáticamente al proceder al pago. Válido solo para nuevas membresías.</p>
+            </div>
+
+            <!-- Planes mejorados -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Plan Mensual -->
+                <div class="discount-plan-card">
+                    <div class="discount-badge mb-4 mx-auto w-fit">
+                        IDEAL PARA EMPEZAR
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold uppercase mb-3 text-white">PLAN MENSUAL</h3>
+                        <div class="space-y-2">
+                            <div class="text-lg text-gray-300">
+                                Antes: <span class="line-through">S/ 70</span>
+                            </div>
+                            <div class="text-5xl font-black accent-text flex items-center justify-center">
+                                S/ 56
+                                <span class="text-lg font-normal text-gray-400 ml-2">/mes</span>
+                            </div>
+                            <div class="discount-badge savings animate-pulse">
+                                ¡Ahorras S/ 14!
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="discount-plan-content">
+                        <div class="discount-plan-features space-y-3">
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-check-circle discount-icon-success mr-3"></i>
+                                <span>Acceso 24/7 a todas las áreas</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-users discount-icon-cyan mr-3"></i>
+                                <span>Clases grupales incluidas</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-dumbbell discount-icon-cyan-light mr-3"></i>
+                                <span>Máquinas de última generación</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-mobile-alt discount-icon-cyan-dark mr-3"></i>
+                                <span>App móvil de seguimiento</span>
+                            </div>
+                        </div>
+                        
+                        <button onclick="selectPlan('mensual')" class="w-full discount-btn-primary">
+                            <i class="fas fa-bolt mr-2"></i>¡QUIERO ESTA OFERTA!
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan Trimestral - MÁS POPULAR -->
+                <div class="discount-plan-card featured">
+                    <div class="discount-badge premium animate-bounce mb-4 mx-auto w-fit">
+                        🏆 MÁS ELEGIDO
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold uppercase mb-3 text-white">PLAN TRIMESTRAL</h3>
+                        <div class="space-y-2">
+                            <div class="text-lg text-gray-300">
+                                Antes: <span class="line-through">S/ 150</span>
+                            </div>
+                            <div class="text-5xl font-black accent-text flex items-center justify-center">
+                                S/ 120
+                                <span class="text-lg font-normal text-gray-400 ml-2">/3 meses</span>
+                            </div>
+                            <div class="discount-badge savings animate-pulse">
+                                ¡Ahorras S/ 30!
+                            </div>
+                            <div class="text-sm discount-icon-success font-semibold">
+                                = Solo S/ 40/mes
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="discount-plan-content">
+                        <div class="discount-plan-features space-y-3">
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-check-circle discount-icon-success mr-3"></i>
+                                <span><strong>Todo del Plan Mensual +</strong></span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-user-tie discount-icon-cyan mr-3"></i>
+                                <span>Entrenador personal asignado</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-calendar-check discount-icon-success mr-3"></i>
+                                <span>Plan de entrenamiento personalizado</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-chart-line discount-icon-cyan mr-3"></i>
+                                <span>Seguimiento de progreso semanal</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-gifts discount-icon-warning mr-3"></i>
+                                <span>Acceso a talleres premium</span>
+                            </div>
+                        </div>
+                        
+                        <button onclick="selectPlan('trimestral')" class="w-full discount-btn-primary">
+                            <i class="fas fa-crown mr-2"></i>¡QUIERO EL MÁS POPULAR!
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan Anual -->
+                <div class="discount-plan-card">
+                    <div class="discount-badge savings mb-4 mx-auto w-fit">
+                        MÁXIMO AHORRO
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold uppercase mb-3 text-white">PLAN ANUAL</h3>
+                        <div class="space-y-2">
+                            <div class="text-lg text-gray-300">
+                                Antes: <span class="line-through">S/ 450</span>
+                            </div>
+                            <div class="text-5xl font-black discount-icon-success flex items-center justify-center">
+                                S/ 360
+                                <span class="text-lg font-normal text-gray-400 ml-2">/año</span>
+                            </div>
+                            <div class="discount-badge savings animate-pulse">
+                                ¡Ahorras S/ 90!
+                            </div>
+                            <div class="text-sm discount-icon-success font-semibold">
+                                = Solo S/ 30/mes
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="discount-plan-content">
+                        <div class="discount-plan-features space-y-3">
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-check-circle discount-icon-success mr-3"></i>
+                                <span><strong>Todo del Plan Trimestral +</strong></span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-trophy discount-icon-warning mr-3"></i>
+                                <span>Acceso VIP a eventos exclusivos</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-utensils discount-icon-cyan-light mr-3"></i>
+                                <span>Consulta nutricional gratuita</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-user-plus discount-icon-cyan-dark mr-3"></i>
+                                <span>2 pases de invitado mensuales</span>
+                            </div>
+                            <div class="flex items-center text-gray-200">
+                                <i class="fas fa-percentage discount-icon-cyan mr-3"></i>
+                                <span>Descuentos en productos y servicios</span>
+                            </div>
+                        </div>
+                        
+                        <button onclick="selectPlan('anual')" class="w-full discount-btn-primary">
+                            <i class="fas fa-rocket mr-2"></i>¡MÁXIMO AHORRO!
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Garantías y beneficios mejorados -->
+            <div class="discount-guarantee-card mb-12">
+                <h3 class="text-2xl font-bold text-center text-white mb-8">
+                    🛡️ Tu Inversión Está 100% Protegida
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-undo-alt text-black text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Garantía 30 Días</h4>
+                        <p class="text-gray-300 text-sm">Si no ves resultados, te devolvemos tu dinero completo</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-lock text-black text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Pago 100% Seguro</h4>
+                        <p class="text-gray-300 text-sm">Procesamiento encriptado y datos protegidos</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-headset text-black text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Soporte 24/7</h4>
+                        <p class="text-gray-300 text-sm">Atención personalizada cuando lo necesites</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonios mejorados -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-center text-white mb-8">
+                    ⭐ Lo Que Dicen Nuestros Miembros
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="discount-testimonial">
+                        <div class="flex items-center mb-4">
+                            <img src="img/anasofia.png" alt="Ana Sofia" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-white">Ana Sofia</h4>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm italic">"¡Increíble! En 3 meses logré mi mejor forma física. Los entrenadores son excepcionales."</p>
+                    </div>
+                    <div class="discount-testimonial">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 accent-bg rounded-full flex items-center justify-center mr-4">
+                                <span class="text-black font-bold">M</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Miguel R.</h4>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm italic">"El ambiente es motivador y las instalaciones de primera. Recomendado 100%."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA final mejorado -->
+            <div class="text-center">
+                <div class="discount-final-cta animate-pulse">
+                    <h3 class="text-3xl font-bold text-white mb-4">
+                        ⚠️ ¡ÚLTIMAS HORAS DE LA OFERTA!
+                    </h3>
+                    <p class="text-xl text-white mb-6">
+                        No pierdas esta oportunidad única de transformar tu vida con 20% OFF
+                    </p>
+                    <div class="text-sm text-red-200">
+                        ⏰ Después de este timer, vuelve al precio normal sin descuentos
+                    </div>
+                </div>
             </div>
         </div>
     </section>

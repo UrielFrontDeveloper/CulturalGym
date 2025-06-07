@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Gracias! | CULTURALGYM</title>
+    <title>¡Gracias! - CULTURALGYM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="img/mejorar.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="antialiased funnel-body font-['Inter'] flex flex-col min-h-screen">
+<body class="antialiased funnel-body font-['Inter']">
 
     <header class="py-6">
         <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
@@ -21,34 +21,110 @@
         </div>
     </header>
 
-    <main class="flex-grow py-16 md:py-24">
-        <div class="container mx-auto px-6 max-w-3xl text-center">
-            <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
-                <i class="fas fa-check-circle text-6xl accent-text mb-6"></i>
-                <h1 id="thankYouTitle" class="text-4xl md:text-5xl font-black uppercase mb-4 leading-tight tracking-tighter">
-                    <!-- Title will be injected here -->
-                </h1>
-                <p id="thankYouMessage" class="text-lg md:text-xl text-gray-300 mb-8">
-                    <!-- Message will be injected here -->
-                </p>
-
-                <div id="ebookPreview" class="my-8 hidden"> <!-- Hidden by default, shown if there's an ebook -->
-                    <img id="ebookImage" src="" alt="Vista Previa del Ebook" class="rounded-lg mx-auto shadow-lg max-h-80 mb-6">
-                    <a id="ebookLink" href="#" class="btn btn-primary text-lg py-3 px-6">
-                        <!-- Link text will be injected here -->
-                    </a>
+    <section class="py-16 md:py-24 min-h-screen flex items-center">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center">
+                <!-- Icono de éxito animado -->
+                <div class="mb-8">
+                    <div class="w-24 h-24 mx-auto accent-bg rounded-full flex items-center justify-center mb-6 animate-bounce">
+                        <i class="fas fa-check text-4xl text-black"></i>
+                    </div>
                 </div>
+
+                <h1 class="text-4xl md:text-6xl font-black uppercase mb-6 text-white">
+                    ¡<span class="accent-text">FELICIDADES</span>!
+                </h1>
                 
-                <p class="text-gray-400 mt-10">
-                    Mientras tanto, ¿por qué no exploras más sobre CULTURAL<span class="accent-text">GYM</span>?
-                </p>
-                <div class="mt-6">
-                    <a href="index.html#services" class="btn btn-secondary mr-2 mb-2">Nuestros Servicios</a>
-                    <a href="index.html#contact" class="btn btn-secondary mb-2">Contáctanos</a>
+                <div class="glassmorphism p-8 md:p-12 rounded-xl mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Tu descarga está en camino
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Hemos enviado tu guía gratuita a tu correo electrónico. 
+                        <span class="accent-text font-semibold">Revisa tu bandeja de entrada</span> 
+                        (y también la carpeta de spam, por si acaso).
+                    </p>
+                    
+                    <div class="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-gift accent-text mr-2"></i>
+                            ¡Pero eso no es todo!
+                        </h3>
+                        <p class="text-gray-300">
+                            Como agradecimiento por unirte a nuestra comunidad, tienes acceso a contenido exclusivo y ofertas especiales que te ayudarán en tu viaje fitness.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Próximos pasos -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="glassmorphism p-6 rounded-xl">
+                        <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-envelope-open text-2xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Paso 1</h3>
+                        <p class="text-gray-300 text-sm">Revisa tu email y descarga tu guía gratuita</p>
+                    </div>
+                    
+                    <div class="glassmorphism p-6 rounded-xl">
+                        <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-book-open text-2xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Paso 2</h3>
+                        <p class="text-gray-300 text-sm">Lee y aplica los consejos de inmediato</p>
+                    </div>
+                    
+                    <div class="glassmorphism p-6 rounded-xl">
+                        <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-rocket text-2xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Paso 3</h3>
+                        <p class="text-gray-300 text-sm">¡Comienza tu transformación hoy mismo!</p>
+                    </div>
+                </div>
+
+                <!-- CTA adicional -->
+                <div class="glassmorphism p-8 rounded-xl mb-8">
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        ¿Listo para el siguiente nivel?
+                    </h3>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Si quieres acelerar tus resultados y tener acompañamiento profesional, 
+                        nuestros planes de membresía están diseñados para llevarte al siguiente nivel.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="index.html#plans" class="btn btn-primary">
+                            <i class="fas fa-dumbbell mr-2"></i>VER PLANES DE MEMBRESÍA
+                        </a>
+                        <a href="index.html#contact" class="btn btn-secondary">
+                            <i class="fas fa-comments mr-2"></i>HABLAR CON UN EXPERTO
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="text-center">
+                    <h4 class="text-lg font-semibold text-white mb-4">
+                        Síguenos para más contenido gratuito
+                    </h4>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-white hover:accent-text transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-white hover:accent-text transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-white hover:accent-text transition-colors">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-white hover:accent-text transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <footer class="py-10 bg-black text-center">
         <div class="container mx-auto px-6">
@@ -66,54 +142,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const source = urlParams.get('source');
-
-            const titleEl = document.getElementById('thankYouTitle');
-            const messageEl = document.getElementById('thankYouMessage');
-            const ebookPreviewEl = document.getElementById('ebookPreview');
-            const ebookImageEl = document.getElementById('ebookImage');
-            const ebookLinkEl = document.getElementById('ebookLink');
-
-            let titleText = "¡GRACIAS POR TU INTERÉS!";
-            let messageText = "Hemos recibido tu solicitud. Revisa tu correo electrónico (y la carpeta de spam) para más detalles.";
-            let ebookImageUrl = "";
-            let ebookLinkUrl = "";
-            let ebookLinkText = "";
-
-            if (source === 'guia30dias') {
-                titleText = "¡TU GUÍA DE 30 DÍAS ESTÁ EN CAMINO!";
-                messageText = "¡Excelente decisión! Hemos enviado la 'Guía de 30 Días: Tu Mejor Versión (Edición Estudiante)' a tu correo electrónico. Deberías recibirla en unos minutos. ¡No olvides revisar tu carpeta de spam por si acaso!";
-                ebookImageUrl = "img/funnel30dias.jpg"; // o una imagen genérica de la guía
-                ebookLinkUrl = "ebook2.html";
-                ebookLinkText = "Acceder a la Guía de 30 Días";
-            } else if (source === 'abdominales') {
-                titleText = "¡TU GUÍA DE ABDOMINALES ESTÁ LISTA!";
-                messageText = "¡Prepárate para esculpir! Hemos enviado la guía '5 Ejercicios Clave para Abdominales Estéticos' a tu correo electrónico. Búscala en tu bandeja de entrada (¡y en spam, por si las moscas!).";
-                ebookImageUrl = "img/abdomen perfecto.jpg"; // o una imagen genérica de la guía
-                ebookLinkUrl = "ebook.html";
-                ebookLinkText = "Acceder a la Guía de Abdominales";
-            }
-
-            titleEl.textContent = titleText;
-            messageEl.textContent = messageText;
-
-            if (ebookImageUrl && ebookLinkUrl && ebookLinkText) {
-                ebookImageEl.src = ebookImageUrl;
-                ebookImageEl.alt = `Vista previa de ${source === 'guia30dias' ? 'Guía de 30 Días' : 'Guía de Abdominales'}`;
-                ebookLinkEl.href = ebookLinkUrl;
-                ebookLinkEl.textContent = ebookLinkText;
-                ebookPreviewEl.classList.remove('hidden');
-            }
-            
-            // Update current year in footer (using the ID from this page)
-            const currentYearThankYou = document.getElementById('currentYearThankYou');
-            if (currentYearThankYou) {
-                currentYearThankYou.textContent = new Date().getFullYear();
-            }
-        });
-    </script>
 </body>
 </html>

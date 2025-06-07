@@ -3,124 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout | CULTURALGYM</title>
+    <title>Checkout - CULTURALGYM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="img/mejorar.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .checkout-input {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #FFFFFF;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-        }
-        .checkout-input:focus {
-            background-color: rgba(255, 255, 255, 0.08);
-            border-color: #00E5FF;
-            box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
-            outline: none;
-        }
-        .checkout-label {
-            color: #a0aec0; /* Tailwind gray-400 */
-            margin-bottom: 0.25rem;
-            font-size: 0.875rem;
-        }
-    </style>
 </head>
-<body class="antialiased bg-gray-950 font-['Inter'] text-white flex flex-col min-h-screen">
+<body class="antialiased funnel-body font-['Inter']">
 
-    <header class="py-6 glassmorphism sticky top-0 z-40">
+    <header class="py-6">
         <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
-            <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center">
-                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-12 w-12 mr-2">
+            <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-16 w-16 mr-2">
                 <span>CULTURAL<span class="accent-text">GYM</span></span>
             </a>
         </div>
     </header>
 
-    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 max-w-5xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            <!-- Payment Details Form -->
-            <div class="md:order-1 glassmorphism p-6 sm:p-8 rounded-xl">
-                <h2 class="text-2xl font-semibold mb-6">Detalles de Pago</h2>
-                <form id="payment-form" class="space-y-6">
-                    <div>
-                        <label for="email" class="block checkout-label">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" class="checkout-input w-full" placeholder="tu@ejemplo.com" required>
-                    </div>
-
-                    <div>
-                        <label class="block checkout-label">Información de la Tarjeta</label>
-                        <div class="checkout-input w-full">
-                            <!-- Placeholder for Stripe Card Element or similar styled inputs -->
-                            <input type="text" id="card-number" name="card-number" class="bg-transparent w-full border-none outline-none placeholder-gray-500" placeholder="Número de Tarjeta" required>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 mt-4">
-                            <input type="text" id="card-expiry" name="card-expiry" class="checkout-input w-full" placeholder="MM / YY" required>
-                            <input type="text" id="card-cvc" name="card-cvc" class="checkout-input w-full" placeholder="CVC" required>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="cardholder-name" class="block checkout-label">Nombre en la Tarjeta</label>
-                        <input type="text" id="cardholder-name" name="cardholder-name" class="checkout-input w-full" placeholder="Nombre completo" required>
-                    </div>
-
-                    <div>
-                        <label for="country" class="block checkout-label">País o Región</label>
-                        <select id="country" name="country" class="checkout-input w-full" required>
-                            <option value="PE">Perú</option>
-                            <option value="US">Estados Unidos</option>
-                            <option value="CO">Colombia</option>
-                            <option value="MX">México</option>
-                            <option value="ES">España</option>
-                            {/* Add more countries as needed */}
-                        </select>
-                    </div>
-                     <div>
-                        <label for="postal-code" class="block checkout-label">Código Postal (Opcional)</label>
-                        <input type="text" id="postal-code" name="postal-code" class="checkout-input w-full" placeholder="Código Postal">
-                    </div>
-
-                    <button type="submit" id="pay-button" class="btn btn-primary w-full text-lg py-3 mt-8">
-                        Pagar S/ <span id="total-amount-button">0.00</span>
-                    </button>
-                </form>
+    <section class="py-16">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-black uppercase mb-4 text-white">
+                    ¡ESTÁS A UN PASO DE <span class="accent-text">TRANSFORMAR TU VIDA</span>!
+                </h1>
+                <p class="text-lg text-gray-300">
+                    Completa tu información para finalizar tu inscripción
+                </p>
             </div>
 
-            <!-- Order Summary -->
-            <div class="md:order-2 glassmorphism p-6 sm:p-8 rounded-xl">
-                <h2 class="text-2xl font-semibold mb-6">Resumen del Pedido</h2>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p id="plan-name-summary" class="font-medium">Nombre del Plan</p>
-                            <p id="plan-duration-summary" class="text-sm text-gray-400">Duración</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Formulario de Checkout -->
+                <div class="glassmorphism p-8 rounded-xl">
+                    <h2 class="text-2xl font-bold text-white mb-6">Información Personal</h2>
+                    
+                    <form id="checkoutForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="form-input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstName" name="firstName" placeholder="Nombre" class="form-input w-full p-4 pl-12 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                            </div>
+                            <div class="form-input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastName" name="lastName" placeholder="Apellidos" class="form-input w-full p-4 pl-12 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                            </div>
                         </div>
-                        <p id="plan-price-summary" class="font-medium">S/ 0.00</p>
-                    </div>
-                    <div id="discount-summary-item" class="hidden flex justify-between items-center border-t border-gray-700 pt-4">
-                        <p>Descuento (<span id="discount-percentage-summary">0</span>%)</p>
-                        <p id="discount-amount-summary" class="text-green-400">-S/ 0.00</p>
-                    </div>
-                    <div class="flex justify-between items-center font-bold text-xl border-t border-gray-700 pt-4 mt-4">
-                        <p>Total</p>
-                        <p id="total-price-summary">S/ 0.00</p>
-                    </div>
+                        
+                        <div class="form-input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Correo Electrónico" class="form-input w-full p-4 pl-12 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                        </div>
+                        
+                        <div class="form-input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="Teléfono" class="form-input w-full p-4 pl-12 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                        </div>
+                        
+                        <div class="form-input-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="dni" name="dni" placeholder="DNI" class="form-input w-full p-4 pl-12 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                        </div>
+                        
+                        <div class="form-input-group">
+                            <i class="fas fa-birthday-cake"></i>
+                            <input type="date" id="birthDate" name="birthDate" class="form-input w-full p-4 pl-12 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mt-8 mb-4">Método de Pago</h3>
+                        
+                        <div class="space-y-4">
+                            <label class="flex items-center space-x-3 p-4 glassmorphism rounded-lg cursor-pointer hover:border-cyan-500 transition-colors">
+                                <input type="radio" name="paymentMethod" value="yape" class="accent-text" checked>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-mobile-alt text-purple-400 text-xl"></i>
+                                    <span class="text-white font-semibold">Yape</span>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 p-4 glassmorphism rounded-lg cursor-pointer hover:border-cyan-500 transition-colors">
+                                <input type="radio" name="paymentMethod" value="plin" class="accent-text">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-mobile-alt text-blue-400 text-xl"></i>
+                                    <span class="text-white font-semibold">Plin</span>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-center space-x-3 p-4 glassmorphism rounded-lg cursor-pointer hover:border-cyan-500 transition-colors">
+                                <input type="radio" name="paymentMethod" value="efectivo" class="accent-text">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-money-bill-wave text-green-400 text-xl"></i>
+                                    <span class="text-white font-semibold">Efectivo en gimnasio</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="mt-8">
+                            <label class="flex items-start space-x-3">
+                                <input type="checkbox" id="termsAccepted" name="termsAccepted" class="mt-1 accent-text" required>
+                                <span class="text-sm text-gray-300">
+                                    Acepto los <a href="#" class="accent-text hover:underline">términos y condiciones</a> y la <a href="#" class="accent-text hover:underline">política de privacidad</a>
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full text-lg py-4 mt-8">
+                            <i class="fas fa-lock mr-2"></i>FINALIZAR INSCRIPCIÓN
+                        </button>
+                    </form>
                 </div>
-                <div class="mt-8 text-sm text-gray-400">
-                    <p><i class="fas fa-lock mr-2 accent-text"></i>Pago seguro y encriptado.</p>
-                    <p class="mt-2">Al completar tu compra, aceptas nuestros <a href="#" class="accent-text hover:underline">Términos de Servicio</a> y <a href="#" class="accent-text hover:underline">Política de Privacidad</a>.</p>
+
+                <!-- Resumen del Pedido -->
+                <div class="glassmorphism p-8 rounded-xl">
+                    <h2 class="text-2xl font-bold text-white mb-6">Resumen de tu Plan</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="border-b border-gray-600 pb-4">
+                            <h3 id="planName" class="text-xl font-semibold text-white">Plan Seleccionado</h3>
+                            <p id="planDuration" class="text-gray-300">Duración</p>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <div id="originalPriceSection" class="flex justify-between">
+                                <span class="text-gray-300">Precio original:</span>
+                                <span id="originalPrice" class="text-gray-300 line-through">S/ 0</span>
+                            </div>
+                            <div id="discountSection" class="flex justify-between">
+                                <span class="text-green-400">Descuento:</span>
+                                <span id="discountAmount" class="text-green-400">-S/ 0</span>
+                            </div>
+                            <div class="flex justify-between text-xl font-bold border-t border-gray-600 pt-2">
+                                <span class="text-white">Total a pagar:</span>
+                                <span id="finalPrice" class="accent-text">S/ 0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-green-900/20 border border-green-500/30 rounded-lg">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-shield-alt"></i>
+                            <span class="font-semibold">Garantía de 30 días</span>
+                        </div>
+                        <p class="text-sm text-gray-300 mt-2">
+                            Si no estás satisfecho con tu membresía, te devolvemos tu dinero completo.
+                        </p>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="text-lg font-semibold text-white mb-3">¿Qué incluye tu plan?</h4>
+                        <ul id="planFeatures" class="space-y-2 text-gray-300">
+                            <li class="flex items-center"><i class="fas fa-check-circle accent-text mr-2"></i> Cargando características del plan...</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="py-10 bg-black text-center mt-auto">
+    <footer class="py-10 bg-black text-center">
         <div class="container mx-auto px-6">
             <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center justify-center mb-4 text-white">
                 <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-10 w-10 mr-2">
@@ -132,70 +171,157 @@
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const urlParams = new URLSearchParams(window.location.search);
+        // Plan features mapping
+        const planFeatures = {
+            'PLAN MENSUAL': [
+                'Acceso completo a todas las áreas',
+                'Clases grupales básicas',
+                'Uso ilimitado de máquinas',
+                'Wi-Fi gratuito',
+                'Vestuarios y duchas'
+            ],
+            'PLAN MENSUAL (Oferta)': [
+                'Acceso 24/7 a todas las áreas',
+                'Clases grupales incluidas',
+                'Máquinas de última generación',
+                'App móvil de seguimiento',
+                'Wi-Fi gratuito'
+            ],
+            'PLAN TRIMESTRAL': [
+                'Todo lo del Plan Mensual',
+                'Atención personalizada inicial (evaluación)',
+                'Acceso a talleres seleccionados',
+                'Comunidad activa y soporte',
+                'Seguimiento de progreso'
+            ],
+            'PLAN TRIMESTRAL (Oferta)': [
+                'Todo del Plan Mensual +',
+                'Entrenador personal asignado',
+                'Plan de entrenamiento personalizado',
+                'Seguimiento de progreso semanal',
+                'Acceso a talleres premium'
+            ],
+            'PLAN ANUAL': [
+                'Todo lo del Plan Trimestral',
+                'Seguimiento personalizado continuo',
+                'Eventos privados exclusivos',
+                'Descuentos en tienda y partners',
+                '1 Pase de invitado mensual'
+            ],
+            'PLAN ANUAL (Oferta)': [
+                'Todo del Plan Trimestral +',
+                'Acceso VIP a eventos exclusivos',
+                'Consulta nutricional gratuita',
+                '2 pases de invitado mensuales',
+                'Descuentos en productos y servicios'
+            ],
+            'PASE DIARIO ESTUDIANTE': [
+                'Acceso total por 24 horas',
+                'Todas las máquinas y áreas',
+                'Participación en clases grupales del día',
+                'Wi-Fi gratuito',
+                'Vestuarios y duchas'
+            ],
+            'PLAN MENSUAL ESTUDIANTE': [
+                'Acceso ilimitado por 30 días',
+                'Todas las clases grupales',
+                'Sin contratos, flexibilidad total',
+                'Wi-Fi gratuito',
+                'Descuento estudiantil aplicado'
+            ],
+            'PLAN TRIMESTRAL ESTUDIANTE': [
+                'Todos los beneficios del Plan Mensual Estudiante',
+                'Ideal para el ciclo académico',
+                'Pequeño descuento adicional',
+                'Acceso prioritario a eventos',
+                'Seguimiento personalizado'
+            ],
+            'PLAN 2 MESES': [
+                'Acceso completo por 2 meses',
+                'Todas las clases grupales',
+                'Uso ilimitado de máquinas',
+                'Wi-Fi gratuito',
+                'Flexibilidad de corta duración'
+            ],
+            'PLAN 6 MESES': [
+                'Acceso completo por 6 meses',
+                'Todas las clases grupales',
+                'Seguimiento personalizado',
+                'Descuento por compromiso',
+                'Eventos y talleres incluidos'
+            ]
+        };
 
-            const planName = urlParams.get('planName') || 'Plan Desconocido';
+        // Function to update plan features
+        function updatePlanFeatures(planName) {
+            const featuresContainer = document.querySelector('#planFeatures');
+            if (!featuresContainer) return;
+
+            const features = planFeatures[planName] || [
+                'Acceso completo al gimnasio',
+                'Todas las clases grupales',
+                'Seguimiento personalizado',
+                'App móvil incluida',
+                'Soporte 24/7'
+            ];
+
+            featuresContainer.innerHTML = features.map(feature => 
+                `<li class="flex items-center"><i class="fas fa-check-circle accent-text mr-2"></i> ${feature}</li>`
+            ).join('');
+        }
+
+        // Procesar parámetros URL y llenar el resumen
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Obtener parámetros
+            const planName = urlParams.get('planName') || 'Plan Seleccionado';
             const planPrice = parseFloat(urlParams.get('planPrice')) || 0;
             const planDuration = urlParams.get('planDuration') || '';
             const planOriginalPrice = parseFloat(urlParams.get('planOriginalPrice')) || planPrice;
             const discountPercentage = parseFloat(urlParams.get('discountPercentage')) || 0;
-            const emailFromUrl = urlParams.get('email');
+            const email = urlParams.get('email') || '';
 
-            document.getElementById('plan-name-summary').textContent = planName;
-            document.getElementById('plan-duration-summary').textContent = decodeURIComponent(planDuration);
-            document.getElementById('plan-price-summary').textContent = `S/ ${planOriginalPrice.toFixed(2)}`;
-
-            let finalPrice = planOriginalPrice;
-
-            if (discountPercentage > 0) {
-                const discountAmount = (planOriginalPrice * discountPercentage) / 100;
-                finalPrice = planOriginalPrice - discountAmount;
-
-                document.getElementById('discount-percentage-summary').textContent = discountPercentage;
-                document.getElementById('discount-amount-summary').textContent = `-S/ ${discountAmount.toFixed(2)}`;
-                document.getElementById('discount-summary-item').classList.remove('hidden');
-                
-                // Show original price strikethrough if different from final price due to discount
-                if (planOriginalPrice !== finalPrice) {
-                     document.getElementById('plan-price-summary').innerHTML = `<span class="line-through text-gray-500 text-sm mr-2">S/ ${planOriginalPrice.toFixed(2)}</span> S/ ${finalPrice.toFixed(2)}`;
-                }
-            } else {
-                 document.getElementById('plan-price-summary').textContent = `S/ ${planOriginalPrice.toFixed(2)}`;
-            }
-
-
-            document.getElementById('total-price-summary').textContent = `S/ ${finalPrice.toFixed(2)}`;
-            document.getElementById('total-amount-button').textContent = finalPrice.toFixed(2);
-
-            if (emailFromUrl) {
-                document.getElementById('email').value = decodeURIComponent(emailFromUrl);
-            }
-
-            document.getElementById('payment-form').addEventListener('submit', function (e) {
-                e.preventDefault();
-                // Basic validation
-                const email = document.getElementById('email').value;
-                const cardNumber = document.getElementById('card-number').value;
-                const cardExpiry = document.getElementById('card-expiry').value;
-                const cardCvc = document.getElementById('card-cvc').value;
-                const cardholderName = document.getElementById('cardholder-name').value;
-
-                if (!email || !cardNumber || !cardExpiry || !cardCvc || !cardholderName) {
-                    alert('Por favor, completa todos los campos de pago requeridos.');
-                    return;
-                }
-                
-                alert(`¡Pago simulado exitoso por ${planName}!\nMonto: S/ ${finalPrice.toFixed(2)}\nGracias por tu compra.`);
-                // Redirect to a thank you page or home
-                window.location.href = 'index.html'; 
-            });
+            // Llenar información del plan
+            document.getElementById('planName').textContent = planName;
+            document.getElementById('planDuration').textContent = planDuration;
+            document.getElementById('finalPrice').textContent = `S/ ${planPrice}`;
             
-            const currentYearCheckout = document.getElementById('currentYearCheckout');
-            if (currentYearCheckout) {
-                currentYearCheckout.textContent = new Date().getFullYear();
+            // Update plan features based on selected plan
+            updatePlanFeatures(planName);
+            
+            // Si hay email, prellenarlo
+            if (email) {
+                document.getElementById('email').value = email;
             }
+
+            // Mostrar precio original y descuento si aplica
+            if (discountPercentage > 0) {
+                document.getElementById('originalPrice').textContent = `S/ ${planOriginalPrice}`;
+                document.getElementById('discountAmount').textContent = `-S/ ${(planOriginalPrice - planPrice).toFixed(0)}`;
+                document.getElementById('originalPriceSection').style.display = 'flex';
+                document.getElementById('discountSection').style.display = 'flex';
+            } else {
+                document.getElementById('originalPriceSection').style.display = 'none';
+                document.getElementById('discountSection').style.display = 'none';
+            }
+        });
+
+        // Manejar envío del formulario
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular procesamiento
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>PROCESANDO...';
+            submitButton.disabled = true;
+            
+            // Simular delay de procesamiento
+            setTimeout(() => {
+                window.location.href = 'thank-you.html';
+            }, 2000);
         });
     </script>
 </body>

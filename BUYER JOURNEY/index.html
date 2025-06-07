@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Journey - CulturalGym</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="navigation">
+            <button id="prevBtn" class="nav-btn">
+                <i class="fas fa-chevron-left"></i> Anterior
+            </button>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            
+            <button id="nextBtn" class="nav-btn">
+                Siguiente <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="progress-text"></div>
+
+        <!-- Dynamic Content Container -->
+        <div id="personaContent">
+            <!-- Persona content will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Buyer Journey Map -->
+        <div id="journeyMapContent">
+            <!-- Journey map content will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Content Strategy Map -->
+        <div id="contentStrategyContent">
+            <!-- Content strategy content will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <script src="js/buyer-personas.js"></script>
+</body>
+</html>

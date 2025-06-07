@@ -158,8 +158,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Page-specific initializations
-    // Initialize the 2-hour countdown timer for the discount offer page
-    initializeDiscountCountdown(2, 'countdown-timer-display', 'discountOfferEndTimeCulturalGym');
+    // Initialize the 16-hour countdown timer for the discount offer page (changed from 2 hours)
+    initializeDiscountCountdown(16, 'countdown-timer-display', 'discountOfferEndTimeCulturalGym');
+    
+    // Funcionalidad mejorada para página de descuentos
+    initializeDiscountPageFeatures();
     
     // Update copyright years on all relevant pages
     updateYear('currentYear'); // For index.html or general use
@@ -418,5 +421,145 @@ document.addEventListener('DOMContentLoaded', function() {
         // Aquí puedes añadir otras inicializaciones que dependan del DOM
         // Por ejemplo, si el código del slider Slick o del menú móvil no está ya en un $(document).ready()
     });
+    
+    // Nueva función para características mejoradas de la página de descuentos
+    function initializeDiscountPageFeatures() {
+        // Contador de cupos restantes
+        let spotsLeft = parseInt(localStorage.getItem('spotsLeft')) || Math.floor(Math.random() * 3) + 5;
+        const spotsElement = document.getElementById('spots-left');
+        
+        if (spotsElement) {
+            spotsElement.textContent = spotsLeft;
+            
+            // Reducir cupos cada cierto tiempo para crear urgencia
+            setInterval(() => {
+                if (spotsLeft > 2) {
+                    spotsLeft--;
+                    spotsElement.textContent = spotsLeft;
+                    localStorage.setItem('spotsLeft', spotsLeft.toString());
+                    
+                    // Efecto visual cuando cambian los cupos
+                    spotsElement.parentElement.classList.add('animate-bounce');
+                    setTimeout(() => {
+                        spotsElement.parentElement.classList.remove('animate-bounce');
+                    }, 1000);
+                }
+            }, Math.random() * 60000 + 30000); // Entre 30s y 90s
+        }
+        
+        // Simulador de personas comprando
+        const peopleCounters = document.querySelectorAll('[data-counter]');
+        peopleCounters.forEach(counter => {
+            setInterval(() => {
+                const current = parseInt(counter.textContent);
+                const increment = Math.random() > 0.7 ? 1 : 0;
+                if (increment) {
+                    counter.textContent = current + increment;
+                    counter.classList.add('text-green-400');
+                    setTimeout(() => {
+                        counter.classList.remove('text-green-400');
+                    }, 1000);
+                }
+            }, Math.random() * 15000 + 10000); // Entre 10s y 25s
+        });
+        
+        // Notificaciones de compras en tiempo real
+        showPurchaseNotifications();
+    }
+    
+    // Función para mostrar notificaciones de compras
+    function showPurchaseNotifications() {
+        const names = ['María L.', 'Carlos R.', 'Ana G.', 'Luis M.', 'Sofia P.', 'Diego H.', 'Carmen V.'];
+        const cities = ['Lima', 'Arequipa', 'Cusco', 'Trujillo', 'Chiclayo'];
+        const plans = ['Plan Mensual', 'Plan Trimestral', 'Plan Anual'];
+        
+        function createNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 left-4 bg-yellow-600 text-white px-4 py-3 rounded-lg shadow-lg z-50 transform translate-y-full transition-transform duration-500';
+            
+            const name = names[Math.floor(Math.random() * names.length)];
+            const city = cities[Math.floor(Math.random() * cities.length)];
+            const plan = plans[Math.floor(Math.random() * plans.length)];
+            
+            notification.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-check text-white text-sm"></i>
+                    </div>
+                    <div class="text-sm">
+                        <div class="font-semibold">${name} de ${city}</div>
+                        <div class="text-yellow-200">Acaba de comprar: ${plan}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Mostrar notificación
+            setTimeout(() => {
+                notification.classList.remove('translate-y-full');
+            }, 100);
+            
+            // Ocultar después de 4 segundos
+            setTimeout(() => {
+                notification.classList.add('translate-y-full');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 500);
+            }, 4000);
+        }
+        
+        // Mostrar notificaciones aleatorias
+        if (document.getElementById('discounted-plans-offer')) {
+            setTimeout(createNotification, Math.random() * 10000 + 5000);
+            setInterval(createNotification, Math.random() * 30000 + 20000);
+        }
+    }
+    
+    // Función global para seleccionar planes
+    window.selectPlan = function(planType) {
+        let planData = {};
+        
+        switch(planType) {
+            case 'mensual':
+                planData = {
+                    name: 'PLAN MENSUAL (Oferta)',
+                    price: 56,
+                    duration: '/mes',
+                    originalPrice: 70,
+                    discount: 20
+                };
+                break;
+            case 'trimestral':
+                planData = {
+                    name: 'PLAN TRIMESTRAL (Oferta)',
+                    price: 120,
+                    duration: '/3 meses',
+                    originalPrice: 150,
+                    discount: 20
+                };
+                break;
+            case 'anual':
+                planData = {
+                    name: 'PLAN ANUAL (Oferta)',
+                    price: 360,
+                    duration: '/año',
+                    originalPrice: 450,
+                    discount: 20
+                };
+                break;
+        }
+        
+        // Efecto visual de selección
+        event.target.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Procesando...';
+        event.target.disabled = true;
+        
+        setTimeout(() => {
+            const checkoutUrl = `checkout.html?planName=${encodeURIComponent(planData.name)}&planPrice=${planData.price}&planDuration=${encodeURIComponent(planData.duration)}&planOriginalPrice=${planData.originalPrice}&discountPercentage=${planData.discount}`;
+            window.location.href = checkoutUrl;
+        }, 1500);
+    };
 });
 

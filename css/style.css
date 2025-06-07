@@ -3,7 +3,10 @@ body {
     background-color: #0D0D0D;
     color: #FFFFFF;
     scroll-behavior: smooth;
+    margin: 0;
+    line-height: 1.6;
 }
+
 .accent-text { color: #00E5FF; }
 .accent-bg { 
     background-color: #00E5FF; /* Fallback */
@@ -38,6 +41,8 @@ body {
     z-index: 0;
     text-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
 }
+
+/* Button Styles */
 .btn {
     padding: 0.85rem 1.8rem;
     border-radius: 0.75rem;
@@ -47,15 +52,18 @@ body {
     display: inline-block;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
 }
 .btn-primary {
     background: linear-gradient(45deg, #00E5FF, #00B8D4);
     color: #0D0D0D;
-    border: none;
 }
 .btn-primary:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 6px 25px rgba(0, 229, 255, 0.35);
+    text-decoration: none;
 }
 .btn-secondary {
     border: 2px solid #00E5FF;
@@ -79,12 +87,15 @@ body {
     transform: translateY(-3px) scale(1.03);
     box-shadow: 0 6px 20px rgba(0, 229, 255, 0.25);
 }
+
+/* Typography */
 .section-title {
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     letter-spacing: 1px;
+    text-align: left;
 }
 .section-subtitle {
     font-size: 1.125rem;
@@ -95,315 +106,28 @@ body {
     margin-right: auto;
     line-height: 1.7;
 }
-.hamburger div { width: 28px; height: 3px; background-color: white; margin: 6px 0; transition: 0.4s; }
-.hamburger.active .bar1 { transform: rotate(-45deg) translate(-7px, 7px); }
-.hamburger.active .bar2 { opacity: 0; }
-.hamburger.active .bar3 { transform: rotate(45deg) translate(-6px, -7px); }
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #1a1a1a; }
-::-webkit-scrollbar-thumb { background: linear-gradient(45deg, #00E5FF, #00B8D4); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(45deg, #00c5dd, #00a0b8); }
-.service-card { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; }
-.service-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15); }
-#chatbotIcon {
-    position: fixed; bottom: 25px; left: 25px; background-color: #00E5FF; color: #0D0D0D;
-    width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 28px; cursor: pointer; z-index: 1000; box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-#chatbotIcon:hover { transform: scale(1.1); background-color: #00c5dd; }
-.fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
-
-.plan-card {
-    border: 1px solid rgba(0, 229, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-.plan-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
-    border-color: #00E5FF;
-}
-.plan-card.popular {
-    border-color: #00E5FF;
-    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.25);
-    transform: scale(1.05);
-}
- .plan-card.popular:hover {
-    transform: translateY(-5px) scale(1.07);
-    box-shadow: 0 20px 45px rgba(0, 229, 255, 0.35);
-}
-.plan-feature i {
-    margin-right: 0.75rem;
-    color: #00E5FF;
-}
-.contact-form-container {
-    background: linear-gradient(145deg, rgba(0,0,0), rgba(0,0,0));
-    border: 1px solid rgba(255,255,255,0.1);
-}
-.form-input-group {
-    position: relative;
-}
-.form-input-group i {
-    position: absolute;
-    left: 1.25rem; /* Aumentado para más espacio */
-    top: 50%;
-    transform: translateY(-50%);
-    color: #00E5FF;
-    opacity: 0.6;
-    pointer-events: none; /* Para que no interfiera con el click en el input */
-    
-}
-.form-input {
-    background-color: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding-left: 3.5rem; /* Aumentado para más espacio con el icono */
-}
-.form-input-group textarea + i { /* Ajuste específico para el icono del textarea */
-    top: 1.45rem; /* Ajustar verticalmente para el textarea */
-    transform: translateY(0);
-}
-.form-input:focus {
-    background-color: rgba(255,255,255,0.08);
-    border-color: #00E5FF;
-    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
-}
-#location iframe {
-    filter: grayscale(0.3) contrast(1.1) brightness(0.9); /* Estilo sutil para el mapa */
-    border-radius: 0.75rem;
-}
-
-/* Student Zone Styles */
-.student-zone {
-    /* background: linear-gradient(135deg, #1a0529 0%, #2c0b42 50%, #1a0529 100%); Vibrant purple gradient */
-    background: linear-gradient(135deg, #000000 0%, #100f28 50%, #000000 100%); /* Darker, more subtle purple/blue */
-    padding-top: 4rem;
-    padding-bottom: 0; /* Logo scroller will be directly underneath */
-    position: relative;
-    overflow: hidden; /* For the logo scroller if it's part of this section */
-}
-.student-zone-title {
-    font-size: clamp(2.8rem, 7vw, 4.2rem); /* Even more impactful */
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem; /* More space */
-    letter-spacing: 2px; /* Wider spacing */
-    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 0 35px rgba(0, 229, 255, 0.3), 0 0 50px rgba(170, 0, 255, 0.3); /* Added purple glow */
-}
- .student-zone-subtitle {
-    font-size: 1.25rem; /* Slightly larger */
-    color: #c0c0c0; /* Lighter gray */
-    margin-bottom: 4rem; /* More space */
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.8;
-}
-.student-plan-card {
-    background: rgba(0, 229, 255, 0.07); /* Slightly more visible accent */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 2px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(to bottom right, #00E5FF, #e9bb03); /* Gradient border */
-    border-radius: 1.25rem; /* More rounded */
-    padding: 2.5rem; /* More padding */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1), 0 5px 15px rgba(170, 0, 255, 0.1); /* Dual color shadow */
-    display: flex;
-    flex-direction: column;
-}
-.student-plan-card:hover {
-    transform: translateY(-12px) scale(1.04); /* More pronounced hover */
-    box-shadow: 0 18px 45px rgba(0, 229, 255, 0.25), 0 10px 30px rgba(170, 0, 255, 0.2);
-}
-.student-plan-card .price {
-    font-size: clamp(2.8rem, 6vw, 3.5rem); /* Responsive price */
-    font-weight: 900;
-    color: #FFFFFF; /* White price for contrast on gradient border */
-    margin-bottom: 0.25rem;
-}
-.student-plan-card .price .currency {
-    color: #00E5FF;
-}
-.student-plan-card .duration {
-    font-size: 1rem;
-    color: #a0aec0;
-    margin-bottom: 1.5rem;
-}
-.student-plan-card .all-inclusive-badge {
-    background: linear-gradient(45deg, #00E5FF, #e9bb03); /* Gradient badge */
-    color: #FFFFFF;
-    padding: 0.35rem 1rem; /* Slightly larger badge */
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-top: 0.75rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
-.student-plan-feature {
-    font-size: 1rem;
-}
-.student-plan-feature i {
-    margin-right: 0.75rem;
-    color: #00E5FF; /* Keep icon color consistent or use gradient */
-}
-
-/* Logo Scroller Styles */
-.logo-scroller-container {
-    background-color: white; /* Slightly darker for contrast */
-    padding: 2rem 0; /* More padding */
-    width: 100%;
-    overflow: hidden;
-    margin-top: 5rem; /* More space above */
-    border-top: 1px solid rgba(0, 229, 255, 0.1);
-    border-bottom: 1px solid rgba(0, 229, 255, 0.1);
-}
-.logo-scroller {
-    display: flex;
-    /* Calculate width: (logo_width + (margin_left + margin_right)) * num_logos * 2 (for duplication) */
-    /* Assuming each logo + margin is around 200px: 200px * 5 logos * 2 = 2000px */
-    width: calc((100px + 4rem) * 10); /* (logo width + total horizontal margin) * number of duplicated logos */
-    animation: scrollLogos 40s linear infinite; /* Slower, smoother scroll */
-}
-.logo-scroller img {
-    height: 40px; /* Slightly larger logos */
-    margin: 0 2rem; /* Adjust horizontal margin (2rem left + 2rem right = 4rem total) */
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-.logo-scroller img:hover {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.1);
-}
-
-@keyframes scrollLogos {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        /* Scroll one full set of original logos */
-        transform: translateX(calc((100px + 4rem) * -5));
-    }
-}
-/* Styles for form inputs within contact section, if they were missed or need adjustment */
-#contact .form-input {
-    background-color: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding-left: 4rem; /* Ensure this padding is consistent if icons are used */
-}
-#contact .form-input:focus {
-    background-color: rgba(255,255,255,0.08);
-    border-color: #00E5FF;
-    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
-}
-#contact .form-input-group i {
-    /* Ensure icon positioning is correct */
-    left: 1.25rem; 
-    /* other properties as defined before */
-}
-#contact .form-input-group textarea + i {
-    top: 1.45rem;
-    transform: translateY(0);
-}
-
-/*etilo para pagina de descuento*/
-         /* Custom styles for this page if needed, complementing style.css and Tailwind */
-         .timer-container { /* This class is applied via Tailwind in descuento20.html */
-            background: rgba(0, 229, 255, 0.08); /* Slightly more visible background */
-            border: 1px solid rgba(0, 229, 255, 0.25); /* More prominent border */
-            padding: 2rem; /* Increased padding */
-            border-radius: 0.75rem; /* Consistent with other cards */
-            margin-bottom: 2.5rem; /* Tailwind mb-10 */
-            box-shadow: 0 5px 25px rgba(0, 229, 255, 0.15); /* Enhanced shadow */
-        }
-        /* Style for the text above the timer */
-        .timer-container > p { /* Targets the <p> directly inside .timer-container */
-            font-size: 1.35rem; /* Larger text (Tailwind text-xl is 1.25rem) */
-            font-weight: 600; /* Tailwind font-semibold */
-            color: #E2E8F0; /* Lighter color for better contrast (Tailwind slate-200) */
-            margin-bottom: 1rem; /* Tailwind mb-4 */
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: #a0aec0; /* Tailwind gray-500 */
-            font-size: 0.9em;
-        }
-        .savings-text {
-            color: #48bb78; /* Tailwind green-500 */
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-
-        /* Styles from funnel-abdominales.html and thank-you.html */
-.funnel-body {
-    background-color: #0F172A; /* Dark theme for funnel pages */
-    color: #E2E8F0; /* Light text for dark background */
-}
-.form-input-funnel {
-    background-color: #1E293B; /* Darker input background */
-    border: 1px solid #334155;
-    color: #E2E8F0;
-}
-.form-input-funnel::placeholder {
-    color: #64748B;
-}
-.form-input-funnel:focus {
-    border-color: #00E5FF; /* Accent color border on focus */
-    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.3);
-}
-
-/* Global Styles */
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background-color: #121212; /* Dark background for the ebook */
-    color: #e0e0e0; /* Light gray text for readability */
-    line-height: 1.6;
-}
-
-.page-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.accent-text {
-    color: #00E5FF; /* Bright cyan accent */
-}
-
-.font-semibold {
-    font-weight: 600;
-}
-
 h1, h2, h3, h4, h5 {
     color: #ffffff;
     font-weight: 700;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
 }
-
 h1.ebook-title {
     font-size: 2.8em;
     font-weight: 900;
     margin-bottom: 0.5em;
     line-height: 1.2;
 }
-
 h2.section-title {
     font-size: 2em;
     text-align: center;
     margin-bottom: 1em;
     font-weight: 700;
 }
-
 h3.exercise-title, h3.section-title-card {
     font-size: 1.6em;
     margin-bottom: 0.8em;
-    color: #00E5FF; /* Accent color for these titles */
+    color: #00E5FF;
 }
 h3.section-title-card .accent-text {
     color: #fff; /* White for the non-accent part if title is mostly accent */
@@ -412,13 +136,13 @@ h3.section-title-card span.accent-text {
     color: #00E5FF; /* Ensure accent text within title is cyan */
 }
 
-
 p {
     margin-bottom: 1em;
     font-size: 1em;
     color: #b0b0b0; /* Slightly dimmer than main text for paragraphs */
 }
 
+/* Lists */
 ul {
     list-style: none;
     padding-left: 0;
@@ -438,6 +162,7 @@ ul li::before {
     font-weight: bold;
 }
 
+/* Links */
 a {
     color: #00E5FF;
     text-decoration: none;
@@ -447,300 +172,287 @@ a:hover {
     text-decoration: underline;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 1em;
-    font-size: 1.1em;
+/* Navigation */
+.hamburger div { width: 28px; height: 3px; background-color: white; margin: 6px 0; transition: 0.4s; }
+.hamburger.active .bar1 { transform: rotate(-45deg) translate(-7px, 7px); }
+.hamburger.active .bar2 { opacity: 0; }
+.hamburger.active .bar3 { transform: rotate(45deg) translate(-6px, -7px); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: linear-gradient(45deg, #00E5FF, #00B8D4); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(45deg, #00c5dd, #00a0b8); }
+
+/* Cards */
+.service-card { 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; 
+}
+.service-card:hover { 
+    transform: translateY(-10px) scale(1.03); 
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15); 
 }
 
-.btn-primary {
-    background-color: #00E5FF;
-    color: #121212; /* Dark text on primary button */
+.plan-card {
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: #00c4d3;
-    transform: translateY(-2px);
-    text-decoration: none;
+.plan-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
+    border-color: #00E5FF;
 }
 
-.custom-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 229, 255, 0), rgba(0, 229, 255, 0.75), rgba(0, 229, 255, 0));
-    margin: 3em 0;
+.plan-card.popular {
+    border-color: #00E5FF;
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.25);
+    transform: scale(1.05);
 }
 
-.logo {
-    height: 80px;
-    width: 80px;
-    margin: 0 auto 20px auto;
-    border-radius: 50%;
-    display: block;
+.plan-card.popular:hover {
+    transform: translateY(-5px) scale(1.07);
+    box-shadow: 0 20px 45px rgba(0, 229, 255, 0.35);
 }
 
-/* Header Styles */
-.ebook-header {
+.plan-feature i {
+    margin-right: 0.75rem;
+    color: #00E5FF;
+}
+
+/* Chatbot */
+#chatbotIcon {
+    position: fixed; bottom: 25px; left: 25px; background-color: #00E5FF; color: #0D0D0D;
+    width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; cursor: pointer; z-index: 1000; box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#chatbotIcon:hover { transform: scale(1.1); background-color: #00c5dd; }
+
+/* Animations */
+.fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Forms */
+.contact-form-container {
+    background: linear-gradient(145deg, rgba(0,0,0), rgba(0,0,0));
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.form-input-group {
     position: relative;
-    padding: 40px 20px;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
 }
 
-.ebook-header-bg { /* Specific for ebook1 */
-    background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-}
-
-.ebook-header-overlay {
+.form-input-group i {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for text contrast */
-    z-index: 1;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00E5FF;
+    opacity: 0.6;
+    pointer-events: none;
 }
 
-.header-content {
+.form-input {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding-left: 3.5rem;
+}
+
+.form-input-group textarea + i {
+    top: 1.45rem;
+    transform: translateY(0);
+}
+
+.form-input:focus {
+    background-color: rgba(255,255,255,0.08);
+    border-color: #00E5FF;
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
+}
+
+.form-input-funnel {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: #E2E8F0;
+}
+
+.form-input-funnel::placeholder {
+    color: #64748B;
+}
+
+.form-input-funnel:focus {
+    border-color: #00E5FF;
+    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.3);
+}
+
+/* Student Zone */
+.student-zone {
+    background: linear-gradient(135deg, #000000 0%, #100f28 50%, #000000 100%);
+    padding-top: 4rem;
+    padding-bottom: 0;
     position: relative;
-    z-index: 2;
+    overflow: hidden;
 }
 
-.ebook-subtitle {
-    font-size: 1.2em;
-    margin-bottom: 1.5em;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #f0f0f0;
+.student-zone-title {
+    font-size: clamp(2.8rem, 7vw, 4.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.7), 0 0 30px rgba(0, 229, 255, 0.5), 0 0 45px rgba(0, 229, 255, 0.3);
 }
 
-/* Intro/Outro Section Styles */
-.intro-section, .outro-section {
-    text-align: center;
-    padding: 20px 0;
-}
-
-.intro-section p, .outro-section p {
+.student-zone-subtitle {
+    font-size: 1.25rem;
+    color: #c0c0c0;
+    margin-bottom: 4rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.1em;
+    line-height: 1.8;
 }
 
-/* Exercise Card Styles (ebook.html) */
-.exercise-card {
-    background-color: #1e1e1e; /* Slightly lighter dark shade for cards */
-    padding: 25px;
-    margin-bottom: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
-    border-left: 4px solid #00E5FF;
+.student-plan-card {
+    background: rgba(0, 229, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(0, 229, 255, 0.3);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 5px 15px rgba(0, 229, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
-.exercise-image {
+.student-plan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 1.5em;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 229, 255, 0.1), 
+        transparent
+    );
+    transition: left 0.6s ease;
 }
 
-.exercise-description h4 {
-    font-size: 1.2em;
-    color: #ffffff;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+.student-plan-card:hover::before {
+    left: 100%;
 }
 
-/* Footer Styles */
-.ebook-footer {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: #1a1a1a;
-    margin-top: 3em;
-    border-top: 2px solid #00E5FF;
+.student-plan-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: #00E5FF; /* Brighter border on hover */
+    box-shadow: 
+        0 25px 55px rgba(0, 0, 0, 0.5), /* Deeper main shadow */
+        0 12px 35px rgba(0, 229, 255, 0.35), /* Stronger accent shadow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.15); /* Slightly stronger inset */
 }
 
-.footer-logo-link {
-    display: inline-flex;
-    align-items: center;
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #ffffff;
-}
-.footer-logo-link:hover {
-    text-decoration: none;
+.student-plan-card .price {
+    font-size: clamp(2.8rem, 6vw, 3.5rem);
+    font-weight: 900;
+    color: #FFFFFF;
+    margin-bottom: 0.25rem;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5); /* Subtle shadow for pop */
 }
 
-.logo-footer {
+.student-plan-card .price .currency {
+    color: #00E5FF;
+}
+
+.student-plan-card .duration {
+    font-size: 1rem;
+    color: #a0aec0;
+    margin-bottom: 1.5rem;
+}
+
+.student-plan-card .all-inclusive-badge {
+    background: linear-gradient(45deg, #00E5FF, #00B8D4); /* Cyan gradient */
+    color: #0D0D0D; /* Dark text for contrast */
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.student-plan-feature {
+    font-size: 1rem;
+}
+
+.student-plan-feature i {
+    margin-right: 0.75rem;
+    color: #00E5FF; /* Keep icon color consistent or use gradient */
+}
+
+/* Logo Scroller */
+.logo-scroller-container {
+    background-color: #ffffff; /* Dark background instead of white */
+    padding: 2rem 0;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5rem;
+    border-top: 1px solid rgba(0, 229, 255, 0.2); /* Slightly more visible border */
+    border-bottom: 1px solid rgba(0, 229, 255, 0.2); /* Slightly more visible border */
+}
+.logo-scroller {
+    display: flex;
+    /* Calculate width: (logo_width + (margin_left + margin_right)) * num_logos * 2 (for duplication) */
+    /* Assuming each logo + margin is around 200px: 200px * 7 logos * 2 = 2800px (adjust if num_logos changes) */
+    width: calc((100px + 4rem) * 14); /* (logo width + total horizontal margin) * number of duplicated logos (7 original * 2) */
+    animation: scrollLogos 40s linear infinite;
+}
+.logo-scroller img {
     height: 40px;
-    width: 40px;
-    margin-right: 10px;
-    border-radius: 5px;
+    margin: 0 2rem;
+    transition: filter 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+ 
+}
+.logo-scroller img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
 }
 
-.ebook-footer p {
-    font-size: 0.9em;
-    color: #a0a0a0;
-    margin-bottom: 0.3em;
-}
-.ebook-footer .copyright {
-    font-size: 0.8em;
-    color: #777;
-    margin-top: 1em;
-}
-
-/* ebook2 Specific Styles */
-.ebook2-body {
-    background-color: #1A202C; /* Slightly different dark for ebook2 */
-    color: #CBD5E0;
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Scroll one full set of original logos (7 logos) */
+        transform: translateX(calc((100px + 4rem) * -7));
+    }
 }
 
-.ebook2-body .accent-text {
-    color: #38B2AC; /* Teal accent for ebook2 */
+/* Timer Styles */
+.timer-container {
+    background: rgba(0, 229, 255, 0.08); /* Slightly more visible background */
+    border: 1px solid rgba(0, 229, 255, 0.25); /* More prominent border */
+    padding: 2rem; /* Increased padding */
+    border-radius: 0.75rem; /* Consistent with other cards */
+    margin-bottom: 2.5rem; /* Tailwind mb-10 */
+    box-shadow: 0 5px 25px rgba(0, 229, 255, 0.15); /* Enhanced shadow */
+}
+.timer-container > p {
+    font-size: 1.35rem; /* Larger text (Tailwind text-xl is 1.25rem) */
+    font-weight: 600; /* Tailwind font-semibold */
+    color: #E2E8F0; /* Lighter color for better contrast (Tailwind slate-200) */
+    margin-bottom: 1rem; /* Tailwind mb-4 */
 }
 
-.ebook2-body h1, .ebook2-body h2, .ebook2-body h3, .ebook2-body h4, .ebook2-body h5 {
-    color: #E2E8F0;
-}
-.ebook2-body h3.section-title-card .accent-text {
-    color: #38B2AC;
-}
-.ebook2-body h3.section-title-card span.accent-text {
-     color: #38B2AC;
-}
-
-
-.ebook2-body .btn-primary {
-    background-color: #38B2AC;
-    color: #1A202C;
-}
-.ebook2-body .btn-primary:hover {
-    background-color: #319795;
-}
-
-.ebook2-body .custom-hr {
-    background-image: linear-gradient(to right, rgba(56, 178, 172, 0), rgba(56, 178, 172, 0.75), rgba(56, 178, 172, 0));
-}
-
-.ebook2-body .ebook-footer {
-    background-color: #2D3748;
-    border-top: 2px solid #38B2AC;
-}
-.ebook2-body .footer-logo-link {
-    color: #E2E8F0;
-}
-.ebook2-body .ebook-footer p {
-    color: #A0AEC0;
-}
-.ebook2-body .ebook-footer .copyright {
-    color: #718096;
-}
-
-.ebook2-subtitle-special {
-    font-size: 1em;
-    font-style: italic;
-    color: #A0AEC0;
-    margin-top: -1em;
-    margin-bottom: 1.5em;
-}
-
-.content-card {
-    background-color: #2D3748; /* Darker card for ebook2 */
-    padding: 25px;
-    margin-bottom: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(56, 178, 172, 0.1);
-    border-left: 4px solid #38B2AC;
-}
-
-.content-image {
-    width: 100%;
-    max-height: 350px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 1.5em;
-}
-
-.pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-.pillars-grid h4 {
-    font-size: 1.2em;
-    color: #E2E8F0;
-    margin-bottom: 0.3em;
-}
-.pillars-grid i {
-    margin-right: 8px;
-}
-
-.week-objective {
-    text-align: center;
-    font-style: italic;
-    margin-bottom: 1.5em;
-    color: #A0AEC0;
-}
-
-.week-detail {
-    margin-bottom: 2em;
-}
-.week-detail:last-child {
-    margin-bottom: 0;
-}
-
-.day-range-title {
-    font-size: 1.3em;
-    color: #38B2AC; /* Teal for these sub-titles */
-    text-decoration: underline;
-    margin-bottom: 1em;
-}
-
-.day-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 1em;
-}
-.day-grid h5 {
-    font-size: 1.1em;
-    color: #E2E8F0;
-    margin-bottom: 0.5em;
-}
-.day-grid ul {
-    padding-left: 0; /* Reset for nested lists */
-}
-.day-grid ul li::before {
-    color: #38B2AC; /* Teal bullets for ebook2 */
-}
-.day-grid .sub-list li::before {
-    content: '-'; /* Different bullet for sub-lists */
-}
-
-.fit-tip {
-    font-size: 0.95em;
-    background-color: rgba(56, 178, 172, 0.1);
-    padding: 10px;
-    border-radius: 4px;
-    border-left: 3px solid #38B2AC;
-    color: #CBD5E0;
-}
-.fit-tip i {
-    color: #38B2AC;
-    margin-right: 5px;
-}
-
-/* Timer Styles for descuento20.html */
 #countdown-timer-display {
     font-family: 'Orbitron', 'Courier New', Courier, monospace; /* More futuristic digital font, fallback to Courier */
     /* Tailwind classes: text-5xl font-bold accent-text tracking-wider py-2 */
@@ -795,88 +507,772 @@ a:hover {
     display: block; /* Make it take full width if needed */
 }
 
-
-/* Checkout Page Specific Styles (can be expanded) */
-.checkout-body { /* If you want a specific body class for checkout */
-    background-color: #0a0f1a; /* Slightly different dark shade if needed */
+/* Ebook Styles */
+.ebook-header {
+    position: relative;
+    padding: 40px 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
 }
 
-/* Responsive adjustments */
+.ebook-header-bg {
+    background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+}
+
+.ebook-header-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for text contrast */
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.ebook-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f0f0f0;
+}
+
+.exercise-card {
+    background-color: #1e1e1e; /* Slightly lighter dark shade for cards */
+    padding: 25px;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
+    border-left: 4px solid #00E5FF;
+}
+
+.exercise-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+}
+
+.custom-hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 229, 255, 0), rgba(0, 229, 255, 0.75), rgba(0, 229, 255, 0));
+    margin: 3em 0;
+}
+
+/* Footer */
+.ebook-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #1a1a1a;
+    margin-top: 3em;
+    border-top: 2px solid #00E5FF;
+}
+
+.footer-logo-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #ffffff;
+}
+
+.footer-logo-link:hover {
+    text-decoration: none;
+}
+
+.logo, .logo-footer {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* Special Pages */
+.funnel-body {
+    background-color: #0F172A; /* Dark theme for funnel pages */
+    color: #E2E8F0; /* Light text for dark background */
+}
+
+.ebook2-body {
+    background-color: #1A202C; /* Slightly different dark for ebook2 */
+    color: #CBD5E0;
+}
+
+.ebook2-body .accent-text {
+    color: #38B2AC; /* Teal accent for ebook2 */
+}
+
+.ebook2-body .btn-primary {
+    background-color: #38B2AC;
+    color: #1A202C;
+}
+
+.ebook2-body .btn-primary:hover {
+    background-color: #319795;
+}
+
+/* Page Container */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Intro Section */
+.intro-section {
+    text-align: center;
+    margin: 3em 0;
+    padding: 2em;
+}
+
+/* Content Cards */
+.content-card {
+    background-color: #1e1e1e;
+    padding: 30px;
+    margin-bottom: 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.1);
+    border-left: 4px solid #00E5FF;
+}
+
+.content-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1.5em 0;
+}
+
+/* Grid Layouts */
+.pillars-grid, .day-grid, .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pillars-grid > div, .day-card, .resource-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillars-grid > div:hover, .day-card:hover, .resource-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 229, 255, 0.15);
+}
+
+.day-card h4 {
+    color: #00E5FF;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+.resource-item i {
+    font-size: 2em;
+    margin-bottom: 1em;
+    display: block;
+}
+
+.resource-item h4 {
+    color: #ffffff;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+/* Special Subtitle for Ebook2 */
+.ebook2-subtitle-special {
+    background: linear-gradient(45deg, #38B2AC, #4FD1C7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Content Section */
+.content-section {
+    margin: 2em 0;
+}
+
+/* Exercise Cards - specific for ebook.html */
+.exercise-card {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(40, 40, 40, 0.9));
+    padding: 30px;
+    margin-bottom: 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.1);
+    border-left: 4px solid #00E5FF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
+}
+
+.exercise-title {
+    color: #00E5FF;
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    font-weight: 700;
+}
+
+.exercise-title i {
+    margin-right: 0.5em;
+}
+
+.exercise-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1.5em 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.exercise-card h4 {
+    color: #ffffff;
+    font-size: 1.3em;
+    margin: 1.5em 0 0.5em 0;
+    font-weight: 600;
+}
+
+.exercise-card ul {
+    margin: 1em 0;
+}
+
+.exercise-card ul li {
+    margin-bottom: 0.8em;
+    padding-left: 1.5em;
+    position: relative;
+    line-height: 1.6;
+}
+
+.exercise-card ul li::before {
+    content: '▶';
+    color: #00E5FF;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Checkout Specific Styles */
+.form-input {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #ffffff;
+}
+
+.form-input::placeholder {
+    color: #94a3b8;
+}
+
+.form-input:focus {
+    background-color: rgba(255,255,255,0.08);
+    border-color: #00E5FF;
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
+}
+
+/* Radio button styling */
+input[type="radio"]:checked {
+    accent-color: #00E5FF;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: #00E5FF;
+}
+
+/* Thank You Page Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Success Icon Animation */
+@keyframes successPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 229, 255, 0);
+    }
+}
+
+.animate-successPulse {
+    animation: successPulse 2s infinite;
+}
+
+/* Responsive adjustments for new content */
 @media (max-width: 768px) {
-    h1.ebook-title {
-        font-size: 2.2em;
+    .page-container {
+        padding: 0 15px;
     }
-    h2.section-title {
-        font-size: 1.8em;
+    
+    .pillars-grid, .day-grid, .resources-grid {
+        grid-template-columns: 1fr;
     }
-    .pillars-grid, .day-grid {
-        grid-template-columns: 1fr; /* Stack on smaller screens */
+    
+    .exercise-card, .content-card {
+        padding: 20px;
+    }
+    
+    .exercise-title {
+        font-size: 1.5em;
+    }
+    
+    .intro-section {
+        padding: 1.5em;
     }
 }
 
 @media (max-width: 480px) {
-    h1.ebook-title {
-        font-size: 1.8em;
+    .exercise-title {
+        font-size: 1.3em;
     }
-    h2.section-title {
-        font-size: 1.5em;
+    
+    .ebook2-subtitle-special {
+        font-size: 1.1em;
+        letter-spacing: 1px;
     }
-    .ebook-subtitle {
-        font-size: 1em;
-    }
-    .btn {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
+    
     .exercise-card, .content-card {
         padding: 15px;
     }
 }
 
-.hero-accent-text-shadow {
-    text-shadow: 0 0 25px #00E5FF, 0 0 40px #00B8D4;
+/* ===== ESTILOS EXCLUSIVOS PARA DESCUENTO20.HTML ===== */
+/* Estas clases solo afectan la página de descuentos */
+
+/* Body específico para página de descuentos */
+.discount-page-body {
+    background: radial-gradient(ellipse at center, #0a0a0a 0%, #0d1117 30%, #0a0a0a 100%);
+    background-attachment: fixed;
 }
 
-.experience-image {
-    max-height: 550px;
-    width: 100%; /* Asegura que la imagen sea responsive si no lo es ya */
-    object-fit: cover; /* Mantiene la relación de aspecto */
+/* Glassmorfismo exclusivo para descuentos */
+.discount-glass {
+    background: linear-gradient(135deg, 
+        rgba(0, 229, 255, 0.08) 0%,
+        rgba(13, 13, 13, 0.6) 50%,
+        rgba(0, 229, 255, 0.04) 100%
+    );
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(0, 229, 255, 0.1),
+        0 0 0 1px rgba(0, 229, 255, 0.05);
 }
 
-.contact-form-image {
-    max-height: 480px;
-    width: 100%; /* Asegura que la imagen sea responsive */
-    object-fit: cover; /* Mantiene la relación de aspecto */
+.discount-glass-premium {
+    background: linear-gradient(135deg, 
+        rgba(0, 229, 255, 0.12) 0%,
+        rgba(13, 13, 13, 0.8) 50%,
+        rgba(0, 229, 255, 0.08) 100%
+    );
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border: 2px solid rgba(0, 229, 255, 0.4);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(0, 229, 255, 0.15),
+        0 0 0 1px rgba(0, 229, 255, 0.1),
+        0 0 50px rgba(0, 229, 255, 0.1);
 }
 
-/* Estilos para el header cuando se hace scroll (ejemplo, si no lo tienes ya) */
-/* Ajusta según el diseño de tu header 'scrolled' */
-/*
-#header.scrolled {
-    background-color: rgba(0, 0, 0, 0.8); 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-*/
-
-/* Estilos para el botón de menú móvil (ejemplo, si no lo tienes ya) */
-/*
-.hamburger .bar1, .hamburger .bar2, .hamburger .bar3 {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.4s;
-}
-
-.hamburger.open .bar1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
+/* Tarjetas de planes específicas para descuentos */
+.discount-plan-card {
+    background: linear-gradient(145deg, 
+        rgba(0, 229, 255, 0.03) 0%,
+        rgba(13, 13, 13, 0.8) 30%,
+        rgba(0, 229, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.hamburger.open .bar2 {
-    opacity: 0;
+.discount-plan-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.hamburger.open .bar3 {
-    transform: rotate(45deg) translate(-5px, -6px);
+.discount-plan-features {
+    flex-grow: 1;
+    margin-bottom: 2rem;
 }
-*/
+
+.discount-plan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 229, 255, 0.1), 
+        transparent
+    );
+    transition: left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.discount-plan-card:hover::before {
+    left: 100%;
+}
+
+.discount-plan-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(0, 229, 255, 0.5);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 8px 32px rgba(0, 229, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.discount-plan-card.featured {
+    border: 2px solid #00E5FF;
+    box-shadow: 
+        0 15px 45px rgba(0, 0, 0, 0.4),
+        0 8px 32px rgba(0, 229, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: scale(1.03);
+    background: linear-gradient(145deg, 
+        rgba(0, 229, 255, 0.08) 0%,
+        rgba(13, 13, 13, 0.85) 30%,
+        rgba(0, 229, 255, 0.12) 100%
+    );
+}
+
+.discount-plan-card.featured:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 12px 40px rgba(0, 229, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Badges exclusivos para descuentos */
+.discount-badge {
+    background: linear-gradient(135deg, #00E5FF 0%, #0099CC 100%);
+    color: #0a0a0a;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 
+        0 4px 15px rgba(0, 229, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.discount-badge.premium {
+    background: linear-gradient(135deg, #00E5FF 0%, #FFD700 100%);
+    animation: pulse-glow 2s infinite;
+}
+
+.discount-badge.savings {
+    background: linear-gradient(135deg, #fecf1a 0%, #fecf1a 100%);
+}
+
+.discount-badge.urgent {
+    background: linear-gradient(135deg, #FF4757 0%, #FF3742 100%);
+    color: white;
+    animation: urgent-pulse 1.5s infinite;
+}
+
+/* Botones exclusivos para descuentos */
+.discount-btn-primary {
+    background: linear-gradient(135deg, #00E5FF 0%, #0099CC 50%, #006699 100%);
+    color: #0a0a0a;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 6px 20px rgba(0, 229, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.discount-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.discount-btn-primary:hover::before {
+    left: 100%;
+}
+
+.discount-btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 12px 30px rgba(0, 229, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Timer exclusivo para descuentos */
+.discount-timer {
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 229, 255, 0.05) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(0, 229, 255, 0.3);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(0, 229, 255, 0.1);
+}
+
+.discount-timer-display {
+    font-family: 'Orbitron', 'Courier New', Courier, monospace;
+    color: #00E5FF;
+    text-shadow: 
+        0 0 20px rgba(0, 229, 255, 0.8),
+        0 0 40px rgba(0, 229, 255, 0.4),
+        0 0 60px rgba(0, 229, 255, 0.2);
+    filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.6));
+}
+
+.discount-time-segment {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 229, 255, 0.1) 50%,
+        rgba(0, 0, 0, 0.9) 100%
+    );
+    border-radius: 0.5rem;
+    margin: 0 0.25rem;
+    min-width: 70px;
+    text-align: center;
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(0, 229, 255, 0.1);
+}
+
+.discount-time-segment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(0, 229, 255, 0.15), 
+        transparent
+    );
+    animation: shimmer-discount 3s infinite;
+}
+
+/* Iconos específicos para descuentos - solo cyan y variaciones */
+.discount-icon-cyan { color: #fecf1a; }
+.discount-icon-cyan-light { color: #fecf1a; }
+.discount-icon-cyan-dark { color: #fecf1a; }
+.discount-icon-success { color: #fecf1a; } /* Cyan verdoso */
+.discount-icon-warning { color: #fecf1a; } /* Cyan amarillento manteniendo la identidad */
+
+/* Estadísticas sociales para descuentos */
+.discount-social-proof {
+    background: rgba(0, 229, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.discount-social-proof:hover {
+    background: rgba(0, 229, 255, 0.08);
+    border-color: rgba(0, 229, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Garantías exclusivas para descuentos */
+.discount-guarantee-card {
+    background: linear-gradient(135deg, 
+        rgba(0, 229, 255, 0.05) 0%,
+        rgba(13, 13, 13, 0.8) 50%,
+        rgba(0, 229, 255, 0.03) 100%
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(0, 229, 255, 0.08);
+}
+
+/* Testimonios específicos para descuentos */
+.discount-testimonial {
+    background: linear-gradient(135deg, 
+        rgba(0, 229, 255, 0.06) 0%,
+        rgba(13, 13, 13, 0.7) 50%,
+        rgba(0, 229, 255, 0.04) 100%
+    );
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 6px 25px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(0, 229, 255, 0.06);
+}
+
+.discount-testimonial:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.3),
+        0 4px 15px rgba(0, 229, 255, 0.1);
+}
+
+/* CTA final exclusivo para descuentos */
+.discount-final-cta {
+    background: linear-gradient(135deg, 
+        rgba(255, 71, 87, 0.1) 0%,
+        rgba(13, 13, 13, 0.8) 50%,
+        rgba(255, 71, 87, 0.05) 100%
+    );
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 71, 87, 0.3);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 
+        0 10px 35px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 71, 87, 0.1);
+}
+
+/* Animaciones exclusivas para descuentos */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(0, 229, 255, 0.5);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes urgent-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes shimmer-discount {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Efectos hover específicos para descuentos */
+.discount-hover-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.discount-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.2),
+        0 4px 15px rgba(0, 229, 255, 0.1);
+}
+
+/* Responsive específico para descuentos */
+@media (max-width: 768px) {
+    .discount-plan-card {
+        padding: 1rem;
+    }
+    
+    .discount-plan-card.featured {
+        transform: none;
+        margin-top: 1rem;
+    }
+    
+    .discount-timer {
+        padding: 1rem;
+    }
+    
+    .discount-time-segment {
+        padding: 0.5rem 0.75rem;
+        min-width: 60px;
+        margin: 0 0.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .discount-badge {
+        font-size: 0.7rem;
+        padding: 0.375rem 0.75rem;
+    }
+    
+    .discount-btn-primary {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
