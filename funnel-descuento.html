@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descuento Exclusivo - CULTURALGYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="img/mejorar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased funnel-body font-['Inter'] funnel-descuento-page-body">
+
+    <header class="py-6">
+        <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
+            <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-16 w-16 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+        </div>
+    </header>
+
+    <section id="descuento-funnel-section" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
+                <div class="funnel-descuento-header-image mb-8">
+                    <img src="img/pareja haciendo ejercicio.jpg" alt="Pareja entrenando en CulturalGym" class="rounded-lg mx-auto shadow-lg max-w-md w-full">
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-black uppercase mb-6 leading-tight tracking-tighter">
+                    ¡Tú <span class="accent-text">descuento exclusivo</span> te espera!
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-300 mb-10">
+                    Inscríbete para recibir un cupón de <span class="font-bold accent-text">20% de descuento</span> válido solo por <span class="font-bold">48 horas</span> en nuestra próxima experiencia. 
+                    ¡Solo en Cultural Gym, donde se entrena de verdad!
+                </p>
+
+                <form id="descuentoForm" action="https://lat.us1.list-manage.com/subscribe/post?u=112d6951e1d98603d40cc8218&amp;id=06312b0fb7&amp;f_id=004f77e1f0" method="post" class="space-y-6 funnel-descuento-form">
+                    <div>
+                        <label for="fname-descuento" class="sr-only">Nombre</label>
+                        <input type="text" name="FNAME" id="fname-descuento" placeholder="Tu Nombre Completo" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                    </div>
+                    <div>
+                        <label for="phone-descuento" class="sr-only">Teléfono</label>
+                        <input type="tel" name="PHONE" id="phone-descuento" placeholder="Tu Número de Teléfono" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                    </div>
+                    <div>
+                        <label for="email-descuento" class="sr-only">Correo Electrónico</label>
+                        <input type="email" name="EMAIL" id="email-descuento" placeholder="Tu Correo Electrónico Principal" class="form-input-funnel w-full p-4 rounded-lg placeholder-gray-400 outline-none transition-all" required>
+                    </div>
+                    
+                    <!-- Mailchimp hidden fields -->
+                    <div hidden><input type="hidden" name="tags" value="3086410"></div>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_112d6951e1d98603d40cc8218_06312b0fb7" tabindex="-1" value="">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full text-lg py-4">
+                        QUIERO MI DESCUENTO
+                    </button>
+                </form>
+                <p class="text-xs text-gray-500 mt-4">Respetamos tu privacidad. No spam.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-black text-center">
+        <div class="container mx-auto px-6">
+            <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center justify-center mb-4 text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-10 w-10 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="currentYearFunnelDescuento"></span> CULTURALGYM. Todos los derechos reservados.
+            </p>
+            <p class="text-xs text-gray-600 mt-1">
+                <a href="index.html" class="hover:accent-text">Volver al sitio principal</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

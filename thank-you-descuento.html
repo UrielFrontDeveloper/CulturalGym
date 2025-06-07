@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por Registrarte! - CULTURALGYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="img/mejorar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased funnel-body font-['Inter'] funnel-thankyou-descuento-page-body">
+
+    <header class="py-6">
+        <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
+            <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-16 w-16 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+        </div>
+    </header>
+
+    <section id="thankyou-descuento-section" class="py-16 md:py-24 min-h-screen flex items-center">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
+                <div class="funnel-thankyou-descuento-header-image mb-8">
+                    <img src="img/trainer entrenando a chica.jpg" alt="Entrenador personal en CulturalGym" class="rounded-lg mx-auto shadow-lg max-w-md w-full">
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-black uppercase mb-6 leading-tight tracking-tighter">
+                    ¡Gracias por <span class="accent-text">registrarte</span>!
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                    Tu descuento exclusivo está listo. Escanea este código QR con tu celular para ver tu cupón y reservar tu primera clase con <span class="font-bold accent-text">20% de descuento</span>:
+                </p>
+
+                <div class="funnel-thankyou-qr-container my-10">
+                    <img src="img/QRCUPON.jpg" alt="Código QR para Cupón de Descuento CulturalGym" class="mx-auto rounded-lg shadow-xl border-4 border-cyan-500/50 p-2 bg-white max-w-xs w-full">
+                </div>
+                
+                <p class="text-lg md:text-xl text-gray-300 mb-10">
+                    <i class="fas fa-hourglass-half accent-text mr-2"></i>Recuerda: es válido solo por <span class="font-bold">48 horas</span>.
+                </p>
+
+                <div class="mt-12">
+                    <a href="index.html#contact" class="btn btn-primary text-lg py-4 px-8">
+                        <i class="fas fa-calendar-check mr-2"></i>RESERVAR MI CLASE AHORA
+                    </a>
+                </div>
+                 <p class="text-xs text-gray-500 mt-6">
+                    Si tienes problemas para escanear, contáctanos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-black text-center">
+        <div class="container mx-auto px-6">
+            <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center justify-center mb-4 text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-10 w-10 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="currentYearFunnelThankYouDescuento"></span> CULTURALGYM. Todos los derechos reservados.
+            </p>
+            <p class="text-xs text-gray-600 mt-1">
+                <a href="index.html" class="hover:accent-text">Volver al sitio principal</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

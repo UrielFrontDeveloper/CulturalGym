@@ -170,6 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
     updateYear('currentYearThankYou'); // For thank-you.html
     updateYear('currentYearCheckout'); // For checkout.html
     updateYear('currentYearDiscountPage'); // For descuento20.html
+    updateYear('currentYearFunnelDescuento'); // For funnel-descuento.html
+    updateYear('currentYearFunnelThankYouDescuento'); // For thank-you-descuento.html
 
     // Funciones movidas desde index.html y otros archivos funnel
     function redirectToCheckoutWithDiscount(event) {
@@ -406,21 +408,70 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Para funnel-descuento.html
+    function handleDescuentoFormSubmit(event) {
+        console.log('handleDescuentoFormSubmit CALLED for descuentoForm'); // DEBUG
+        event.preventDefault();
+        console.log('event.preventDefault() CALLED for descuentoForm'); // DEBUG
+        const form = event.target;
+        const emailInput = document.getElementById('email-descuento'); 
+        const nombreInput = document.getElementById('fname-descuento');
+        const phoneInput = document.getElementById('phone-descuento');
 
-    // Actualizar año en footer - generalizado
-    function updateFooterYear() {
-        const yearSpan = document.getElementById('currentYear') || document.getElementById('currentYearFunnel') || document.getElementById('currentYearIndex') || document.getElementById('currentYearAbdominales'); // Agrega más IDs si es necesario
-        if (yearSpan) {
-            yearSpan.textContent = new Date().getFullYear();
+        if (form.checkValidity()) { 
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Procesando...';
+            }
+
+            fetch(form.action, { 
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' 
+            })
+            .then(() => {
+                console.log('Mailchimp fetch initiated for descuentoForm. Redirecting to thank-you-descuento.html...'); // DEBUG
+                window.location.href = "thank-you-descuento.html"; 
+            })
+            .catch(error => {
+                console.error('Error submitting Descuento form to Mailchimp:', error);
+                alert('Hubo un problema al registrar tus datos. Por favor, inténtalo de nuevo.');
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                }
+            });
+        } else {
+            console.log('Formulario descuentoForm NO VALIDO'); // DEBUG
+            form.reportValidity(); 
         }
     }
 
-    // Llamar a las funciones que deben ejecutarse al cargar el DOM
-    document.addEventListener('DOMContentLoaded', function() {
-        updateFooterYear();
-        // Aquí puedes añadir otras inicializaciones que dependan del DOM
-        // Por ejemplo, si el código del slider Slick o del menú móvil no está ya en un $(document).ready()
-    });
+    // Adjuntar manejador de eventos para el formulario de descuento
+    const descuentoForm = document.getElementById('descuentoForm');
+    if (descuentoForm) {
+        console.log('Attaching submit listener to descuentoForm'); // DEBUG
+        descuentoForm.addEventListener('submit', handleDescuentoFormSubmit);
+    } else {
+        // Solo muestra este log si estás en una página que NO es funnel-descuento.html
+        // o si el ID del formulario es incorrecto en funnel-descuento.html
+        if (window.location.pathname.includes('funnel-descuento.html')) {
+            console.error('ERROR: descuentoForm NOT FOUND on funnel-descuento.html page!'); // DEBUG CRITICAL
+        } else {
+            // console.log('descuentoForm not found on current page (this is normal if not on funnel-descuento.html).');
+        }
+    }
+
+    // Los manejadores para guia30DiasForm y abdominalesForm se mantienen como estaban,
+    // ya que esos HTMLs usan onsubmit="handleFormSubmit(event);" con scripts locales o globales.
+    // Si se quisiera centralizar aquí, se quitaría el onsubmit y se añadirían listeners similares a descuentoForm.
+
+    // El formulario de contacto y newsletter ya tienen sus manejadores adjuntados de forma más general
+    // o por ID específico que no entra en conflicto, asumimos que están fuera de este bloque problemático.
     
     // Nueva función para características mejoradas de la página de descuentos
     function initializeDiscountPageFeatures() {
