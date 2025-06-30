@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Oferta - CULTURALGYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="img/mejorar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Dark background consistent with CulturalGym */
+            color: #e0e0e0; /* Light text for readability */
+        }
+        .accent-text {
+            color: #00E5FF; /* CulturalGym accent color */
+        }
+        .header-bg {
+            background-color: #222222; /* Slightly lighter dark for header */
+        }
+        .section-title {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1rem; /* 16px */
+            text-align: center;
+            color: #ffffff;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* 18px */
+            color: #b0b0b0;
+            margin-bottom: 3rem; /* 48px */
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .content-card {
+            background-color: #2c2c2c; /* Darker card background */
+            padding: 2rem; /* 32px */
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.1);
+            margin-bottom: 2rem; /* 32px */
+        }
+        .content-card h3 {
+            font-size: 1.75rem; /* 28px */
+            font-weight: 700;
+            color: #00E5FF;
+            margin-bottom: 1rem;
+        }
+        .content-card p, .content-card li {
+            color: #c7c7c7;
+            line-height: 1.7;
+        }
+        .schedule-table {
+            width: 100%;
+            margin-top: 1.5rem;
+            border-collapse: collapse;
+            background-color: #333333;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #444444;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #00E5FF;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        .form-input {
+            background-color: #333;
+            border: 1px solid #555;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem; /* 6px */
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #00E5FF;
+            box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.5);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #00E5FF 0%, #00B8D4 100%);
+            color: #1a1a1a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 229, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="header-bg shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-12 w-12 md:h-16 md:w-16 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html#services" class="nav-link">Servicios</a>
+                <a href="index.html#trainers" class="nav-link">Entrenadores</a>
+                <a href="index.html#testimonials" class="nav-link">Testimonios</a>
+                <a href="index.html#contact" class="nav-link">Contacto</a>
+                <a href="funnel-descuento.html" class="btn btn-primary text-sm">¡ÚNETE AHORA!</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="index.html#services" class="block text-white hover:bg-gray-700 px-4 py-2">Servicios</a>
+            <a href="index.html#trainers" class="block text-white hover:bg-gray-700 px-4 py-2">Entrenadores</a>
+            <a href="index.html#testimonials" class="block text-white hover:bg-gray-700 px-4 py-2">Testimonios</a>
+            <a href="index.html#contact" class="block text-white hover:bg-gray-700 px-4 py-2">Contacto</a>
+            <a href="funnel-descuento.html" class="block text-center bg-cyan-500 text-black font-bold px-4 py-3 mt-2">¡ÚNETE AHORA!</a>
+        </div>
+    </header>
+
+    <main class="pt-8 pb-16">
+        <div class="container mx-auto px-6">
+            <section id="oferta-hero" class="text-center py-12">
+                <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 text-white">
+                    Descubre Todo lo que <span class="accent-text">CULTURALGYM</span> Tiene para Ti
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Prepárate para una experiencia de fitness inigualable. Aquí te detallamos todo lo que te espera.
+                </p>
+            </section>
+
+            <!-- Secciones de Máquinas -->
+            <section id="maquinas" class="py-12">
+                <div class="content-card">
+                    <h3><i class="fas fa-cogs mr-2 accent-text"></i>Nuestras Zonas de Máquinas</h3>
+                    <p class="mb-4">En CULTURALGYM, contamos con equipamiento de vanguardia para que alcances tus metas. Nuestras instalaciones se dividen en:</p>
+                    <ul class="list-disc list-inside space-y-2 mb-4">
+                        <li><strong>Zona de Cardio:</strong> Cintas de correr, elípticas, bicicletas estáticas y de spinning de última generación para mejorar tu resistencia.</li>
+                        <li><strong>Área de Musculación:</strong> Un arsenal completo de máquinas selectorizadas para trabajar cada grupo muscular de forma aislada y segura.</li>
+                        <li><strong>Zona de Peso Libre:</strong> Amplia variedad de mancuernas (desde 2.5kg hasta 50kg), barras olímpicas, discos y bancos para entrenamientos de fuerza y volumen.</li>
+                        <li><strong>Espacio Funcional:</strong> Equipada con kettlebells, balones medicinales, cajones de salto, TRX y más para entrenamientos dinámicos y completos.</li>
+                    </ul>
+                    <p>Todas nuestras máquinas reciben mantenimiento constante para asegurar tu seguridad y el máximo rendimiento.</p>
+                </div>
+            </section>
+
+            <!-- Clases Grupales y Horario -->
+            <section id="clases" class="py-12">
+                <div class="content-card">
+                    <h3><i class="fas fa-users mr-2 accent-text"></i>Clases Grupales Llenas de Energía</h3>
+                    <p class="mb-4">Siente la motivación de entrenar en grupo con nuestras clases especiales, diseñadas para todos los niveles y gustos. ¡La diversión y los resultados están garantizados!</p>
+                    <ul class="list-disc list-inside space-y-2 mb-6">
+                        <li><strong>Spinning Revolution:</strong> Pedalea al ritmo de la música y quema calorías como nunca.</li>
+                        <li><strong>Box Fit Combat:</strong> Libera estrés y tonifica tu cuerpo con movimientos de boxeo y artes marciales.</li>
+                        <li><strong>Full Body HIIT:</strong> Entrenamientos interválicos de alta intensidad para llevar tu condición física al límite.</li>
+                        <li><strong>Zumba Party:</strong> Baila, diviértete y ponte en forma con los ritmos latinos más contagiosos.</li>
+                        <li><strong>Yoga & Flex:</strong> Mejora tu flexibilidad, fuerza y encuentra tu paz interior.</li>
+                        <li><strong>Core & Abs:</strong> Fortalece tu zona media para una postura impecable y un abdomen de acero.</li>
+                    </ul>
+                    
+                    <h4 class="text-2xl font-bold text-white mb-4 mt-8">Horario de Clases Especiales</h4>
+                    <div class="overflow-x-auto">
+                        <table class="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Lunes</th>
+                                    <th>Martes</th>
+                                    <th>Miércoles</th>
+                                    <th>Jueves</th>
+                                    <th>Viernes</th>
+                                    <th>Sábado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Spinning Revolution</td>
+                                    <td>7:00 AM / 6:00 PM</td>
+                                    <td>-</td>
+                                    <td>7:00 AM / 6:00 PM</td>
+                                    <td>-</td>
+                                    <td>7:00 AM / 6:00 PM</td>
+                                    <td>9:00 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Box Fit Combat</td>
+                                    <td>-</td>
+                                    <td>7:00 PM</td>
+                                    <td>-</td>
+                                    <td>7:00 PM</td>
+                                    <td>-</td>
+                                    <td>11:00 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Full Body HIIT</td>
+                                    <td>8:00 AM</td>
+                                    <td>-</td>
+                                    <td>8:00 AM</td>
+                                    <td>-</td>
+                                    <td>8:00 AM</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Zumba Party</td>
+                                    <td>-</td>
+                                    <td>6:00 PM</td>
+                                    <td>-</td>
+                                    <td>6:00 PM</td>
+                                    <td>-</td>
+                                    <td>10:00 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Yoga & Flex</td>
+                                    <td>7:00 PM</td>
+                                    <td>-</td>
+                                    <td>7:00 PM</td>
+                                    <td>-</td>
+                                    <td>7:00 PM</td>
+                                    <td>8:00 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Core & Abs</td>
+                                    <td>-</td>
+                                    <td>8:00 AM</td>
+                                    <td>-</td>
+                                    <td>8:00 AM</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-400">*Horarios sujetos a cambios. Consulta en recepción para confirmaciones.</p>
+                </div>
+            </section>
+
+            <!-- Productos -->
+            <section id="productos" class="py-12">
+                <div class="content-card">
+                    <h3><i class="fas fa-shopping-cart mr-2 accent-text"></i>Nutrición y Complementos</h3>
+                    <p class="mb-4">Potencia tus resultados con nuestra selección de productos de alta calidad. En nuestra tienda encontrarás:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Suplementos Deportivos:</strong> Proteínas (Whey, Isolate, Vegana), creatinas, pre-entrenos, BCAAs, quemadores de grasa de las mejores marcas.</li>
+                        <li><strong>Snacks Saludables:</strong> Barritas proteicas, frutos secos, batidos listos para tomar.</li>
+                        <li><strong>Bebidas:</strong> Agua, isotónicos, bebidas energéticas sin azúcar.</li>
+                        <li><strong>Merchandising CULTURALGYM:</strong> Ropa deportiva, shakers, toallas y más para que lleves tu pasión por el gym a todas partes.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Profesores / Guías -->
+            <section id="guias" class="py-12">
+                <div class="content-card">
+                    <h3><i class="fas fa-chalkboard-teacher mr-2 accent-text"></i>Entrena con Confianza y Guía Profesional</h3>
+                    <p class="mb-4">En CULTURALGYM, no solo te ofrecemos instalaciones de primera, sino también el acompañamiento de profesionales apasionados por el fitness. Nuestro equipo de <span class="font-bold accent-text">entrenadores certificados</span> está siempre disponible en sala para:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Asesorarte sobre el uso correcto de las máquinas.</li>
+                        <li>Corregir tu técnica para prevenir lesiones y maximizar la efectividad de cada ejercicio.</li>
+                        <li>Ayudarte a estructurar tus rutinas según tus objetivos (pérdida de peso, ganancia muscular, mejora de rendimiento, etc.).</li>
+                        <li>Motivarte y resolver cualquier duda que tengas.</li>
+                    </ul>
+                    <p class="mt-4">¡Entrena sin molestias, con la seguridad de estar bien guiado y enfócate solo en superar tus límites!</p>
+                </div>
+            </section>
+
+            <!-- Google Maps -->
+            <section id="ubicacion" class="py-12">
+                <div class="content-card">
+                    <h3 class="text-center"><i class="fas fa-map-marker-alt mr-2 accent-text"></i>Encuéntranos Fácilmente</h3>
+                    <p class="text-center mb-6">Visítanos en nuestra sede central. ¡Te esperamos para empezar tu transformación!</p>
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.431227987795!2d-71.54002168513696!3d-16.40299998867495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a5883a0b9ef%3A0x1e976aa9a1a6c7b3!2sAv.%20Ej%C3%A9rcito%20710%2C%20Arequipa%2004001%2C%20Peru!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus" 
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p class="text-center mt-4 font-semibold">Dirección: Av. Ejército 710, Yanahuara, Arequipa, Perú.</p>
+                </div>
+            </section>
+
+            <!-- Generador de Código Único -->
+            <section id="codigo-unico" class="py-12">
+                <div class="content-card max-w-2xl mx-auto">
+                    <h3 class="text-center"><i class="fas fa-ticket-alt mr-2 accent-text"></i>¡Genera tu Código de Ingreso Exclusivo!</h3>
+                    <p class="text-center mb-6">Ingresa tu correo electrónico para recibir un código único. Anótalo y preséntalo en recepción para canjear tu acceso especial o promoción.</p>
+                    <form id="codigoForm" class="space-y-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Tu Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required class="form-input" placeholder="tu.correo@ejemplo.com">
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Generar Mi Código</button>
+                    </form>
+                    <div id="codigoResultado" class="mt-6 text-center hidden">
+                        <p class="text-lg text-gray-300">¡Tu código ha sido generado!</p>
+                        <p class="text-3xl font-bold accent-text my-2" id="codigoGenerado"></p>
+                        <p class="text-gray-400">Anótalo y preséntalo en CULTURALGYM (Av. Ejército 710, Yanahuara) para activar tu beneficio. ¡Te esperamos!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <img src="img/mejorar.png" alt="Logo CULTURALGYM" class="h-20 w-20 mx-auto mb-4">
+            <p class="text-2xl font-bold text-white mb-2">CULTURAL<span class="accent-text">GYM</span></p>
+            <p class="mb-4">Transforma tu cuerpo, eleva tu espíritu.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fab fa-tiktok text-2xl"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fab fa-youtube text-2xl"></i></a>
+            </div>
+            <p class="text-sm">&copy; <span id="currentYear"></span> CULTURALGYM. Todos los derechos reservados.</p>
+            <p class="text-xs mt-1">Diseñado con <i class="fas fa-heart text-red-500"></i> para la comunidad fitness.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Footer current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Código único form
+        const codigoForm = document.getElementById('codigoForm');
+        const codigoResultado = document.getElementById('codigoResultado');
+        const codigoGeneradoElem = document.getElementById('codigoGenerado');
+
+        if (codigoForm) {
+            codigoForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const emailInput = document.getElementById('email');
+                if (emailInput.value && emailInput.checkValidity()) {
+                    // Simulate code generation
+                    const randomCode = 'CGYM-' + Math.random().toString(36).substr(2, 5).toUpperCase() + Math.floor(Math.random() * 100);
+                    codigoGeneradoElem.textContent = randomCode;
+                    codigoResultado.classList.remove('hidden');
+                    
+                    // Store email and code for thank you page (optional, using localStorage for demo)
+                    localStorage.setItem('culturalGymEmail', emailInput.value);
+                    localStorage.setItem('culturalGymCode', randomCode);
+
+                    // Redirect to thank you page
+                    window.location.href = 'thank-you-gym-oferta.html';
+                } else {
+                    alert('Por favor, ingresa un correo electrónico válido.');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

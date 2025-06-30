@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Anuncio del Gimnasio - CULTURALGYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="img/mejorar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VCBVZQ96V5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VCBVZQ96V5');
+</script>
+
+<body class="antialiased funnel-body font-['Inter']">
+
+    <header class="py-6">
+        <div class="container mx-auto px-6 flex justify-center items-center max-w-7xl">
+            <a href="index.html" class="text-3xl font-bold tracking-tight flex items-center text-white">
+                <img src="img/mejorar.png" alt="Icono del logo CULTURALGYM" class="h-16 w-16 mr-2">
+                <span>CULTURAL<span class="accent-text">GYM</span></span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 max-w-4xl">
+        <div class="glassmorphism p-8 md:p-12 rounded-xl shadow-2xl">
+            <div class="text-center mb-10">
+                <h1 class="text-4xl md:text-5xl font-black uppercase mb-4 text-white">
+                    ¡Tu <span class="accent-text">Pase de Cortesía</span> Te Espera!
+                </h1>
+                <p class="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">
+                    Descubre nuestras instalaciones de primer nivel, clases energizantes y entrenadores expertos. Completa el formulario para obtener un día de acceso GRATIS.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="funnel-descuento-header-image">
+                    <img src="img/trainer entrenando a chica.jpg" alt="Entrenador personal ayudando a una clienta en CULTURALGYM" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                    <p class="text-sm text-gray-400 mt-3 text-center">Ambiente motivador y equipamiento de última generación.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-6 text-white">Completa Tus Datos y Obtén Tu Pase:</h2>
+                    <form id="generadorCodigoFormGym" class="space-y-6">
+                        <div>
+                            <label for="nombreCompletoGym" class="block text-sm font-medium text-gray-300 mb-1">Nombre Completo</label>
+                            <input type="text" id="nombreCompletoGym" name="nombreCompletoGym" required
+                                   class="w-full p-3.5 rounded-lg form-input-funnel focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500 transition duration-150 ease-in-out"
+                                   placeholder="Ej: Ana García">
+                        </div>
+                        <div>
+                            <label for="emailUsuarioGym" class="block text-sm font-medium text-gray-300 mb-1">Correo Electrónico</label>
+                            <input type="email" id="emailUsuarioGym" name="emailUsuarioGym" required
+                                   class="w-full p-3.5 rounded-lg form-input-funnel focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500 transition duration-150 ease-in-out"
+                                   placeholder="tu@email.com">
+                        </div>
+                        <div>
+                            <label for="telefonoGym" class="block text-sm font-medium text-gray-300 mb-1">Número de Teléfono (Opcional)</label>
+                            <input type="tel" id="telefonoGym" name="telefonoGym"
+                                   class="w-full p-3.5 rounded-lg form-input-funnel focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500 transition duration-150 ease-in-out"
+                                   placeholder="Ej: 987 654 321">
+                        </div>
+                        <div class="flex items-start">
+                            <input id="aceptoTerminosGym" name="aceptoTerminosGym" type="checkbox" required
+                                   class="h-5 w-5 text-cyan-500 border-gray-600 rounded focus:ring-cyan-400 bg-gray-700 mt-0.5 mr-2 cursor-pointer">
+                            <label for="aceptoTerminosGym" class="text-sm text-gray-400">
+                                Acepto los <a href="#" class="accent-text hover:underline">términos y condiciones</a> y la <a href="#" class="accent-text hover:underline">política de privacidad</a>.
+                            </label>
+                        </div>
+                        <button type="submit" class="w-full btn btn-primary text-lg py-3.5">
+                            <i class="fas fa-ticket-alt mr-2"></i> Obtener Mi Pase de Cortesía
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <h3 class="text-2xl font-bold text-center mb-6 text-white">¿Qué incluye tu pase de cortesía?</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glassmorphism p-6 rounded-lg text-center">
+                        <i class="fas fa-dumbbell text-3xl accent-text mb-3"></i>
+                        <h4 class="text-lg font-semibold text-white mb-1">Acceso a Equipos</h4>
+                        <p class="text-sm text-gray-400">Todas las máquinas de cardio y pesas.</p>
+                    </div>
+                    <div class="glassmorphism p-6 rounded-lg text-center">
+                        <i class="fas fa-users text-3xl accent-text mb-3"></i>
+                        <h4 class="text-lg font-semibold text-white mb-1">Clases Grupales</h4>
+                        <p class="text-sm text-gray-400">Participa en una de nuestras clases (sujeto a disponibilidad).</p>
+                    </div>
+                    <div class="glassmorphism p-6 rounded-lg text-center">
+                        <i class="fas fa-shower text-3xl accent-text mb-3"></i>
+                        <h4 class="text-lg font-semibold text-white mb-1">Instalaciones</h4>
+                        <p class="text-sm text-gray-400">Uso de vestuarios y duchas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 mt-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="currentYearAnuncioGymDetalles"></span> CULTURALGYM. Todos los derechos reservados. Promoción válida solo para nuevos clientes.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
